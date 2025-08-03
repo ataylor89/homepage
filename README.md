@@ -32,7 +32,7 @@ Below are some instructions for hosting a homepage on AWS.
     1. Under "Key pair (login)" click on "Create new key pair"
     2. Enter a name for the key pair. I called mine "myserver", which is the same name I gave to my instance.
     3. The key pair type should be RSA and the private key file format should be .pem.
-    4. Click on "Create key pair".\
+    4. Click on "Create key pair".
     5. The pem file (in my case, myserver.pem) gets saved to your Downloads folder if you have MacOS.
     6. In Terminal I type the command "mv ~/Downloads/myserver.pem ~/myserver.pem" to put it in my user directory.
 13. We are now going to create a security group that allows SSH, HTTP, and HTTPS traffic.
@@ -76,7 +76,7 @@ Below are some instructions for hosting a homepage on AWS.
 16. When your instance has initialized, go to EC2 > Instances, and you'll see your instance in the menu
 17. Check the checkbox that corresponds to your instance, and this will cause the instance summary to appear at the bottom
 18. The public IPv4 address for your instance appears under "Instance summary". Copy it to your clipboard by clicking on the square icon.
-19. Open Terminal. We are going to SSH into our instance.\
+19. Open Terminal. We are going to SSH into our instance.
     1. Make sure that your .pem file is located in your user directory. Mine is called myserver.pem.
     2. In Terminal type the command "stat -f %A ~/[filename].pem". I typed "stat -f %A ~/myserver.pem".
     3. On my computer, the default file permissions are 644. We need to change them to 400.
