@@ -40,7 +40,7 @@ Below are some instructions for hosting a homepage on AWS.
 13.2 Check "Allow SSH traffic from Anywhere", "Allow HTTPS traffic from the internet", and "Allow HTTP traffic from the internet".
 14. We are now going to edit the user data under "Advanced details"\
 14.1 The user data is a script that is run when the instance is started for the very first time\
-14.2 Under "Advanced details", at the very bottom under "User data - optional", copy/paste the following script:\
+14.2 Under "Advanced details", at the very bottom under "User data - optional", copy/paste the following script:
     ```
     sudo yum -y install pip
     pip install Flask
