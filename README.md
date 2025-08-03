@@ -41,12 +41,12 @@ Below are some instructions for hosting a homepage on AWS.
 14. We are now going to edit the user data under "Advanced details"\
 14.1 The user data is a script that is run when the instance is started for the very first time\
 14.2 Under "Advanced details", at the very bottom under "User data - optional", copy/paste the following script:
-    ```
-    sudo yum -y install pip
-    pip install Flask
-    sudo su
-    pip install Flask
-    ```
+```
+sudo yum -y install pip
+pip install Flask
+sudo su
+pip install Flask
+```
 14.3 The script (above) installs pip, which is Python's package manager\
 14.4 The script (above) also installs the Flask package, which we will use to create a web server\
 14.5 The script (above) installs Flask for both the ec2-user account and the root user account\
