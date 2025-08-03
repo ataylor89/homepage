@@ -57,12 +57,12 @@ Below are some instructions for hosting a homepage on AWS.
 19. The public IPv4 address for your instance appears under "Instance summary". Copy it to your clipboard by clicking on the square icon.
 20. Open Terminal. We are going to SSH into our instance.\
 20.1 Make sure that your .pem file is located in your user directory. Mine is called myserver.pem.\
-20.2 In Terminal type the command "stat -f %A ~/<filename>.pem". I typed "stat -f %A ~/myserver.pem".\
+20.2 In Terminal type the command "stat -f %A ~/[filename].pem". I typed "stat -f %A ~/myserver.pem".\
 20.3 On my computer, the default file permissions are 644. We need to change them to 400.\
-20.4 In Terminal type the command "chmod 400 ~/<filename>.pem". I typed "chmod 400 ~/myserver.pem".\
+20.4 In Terminal type the command "chmod 400 ~/[filename].pem". I typed "chmod 400 ~/myserver.pem".\
 20.5 Now that our file permissions are compliant with the ssh program, we can ssh in.\
-20.6 In Terminal type the command "ssh -i ~/<filename>.pem ec2-user@<public-ipv4-address>".
-20.7 My file is called myserver.pem, so I typed "ssh -i ~/myserver.pem ec2-user@<public-ipv4-address>"
+20.6 In Terminal type the command "ssh -i ~/[filename].pem ec2-user@[public-ipv4-address]".
+20.7 My file is called myserver.pem, so I typed "ssh -i ~/myserver.pem ec2-user@[public-ipv4-address]"
 20.8 The public IPv4 address should be saved in your clipboard because of step 18.\
 20.9 You can copy/paste the public IPv4 address into your ssh command using command+v.\
 20.10 A prompt should appear that asks you if you want to connect. Type "yes" and click enter.\
