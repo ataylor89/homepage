@@ -17,7 +17,7 @@ Below are some instructions for hosting a homepage on AWS.
 1. Create an account on Amazon Web Services (AWS)\
     1. In order to create an account, I gave my root user email address, my account name, and my debit card number.
 2. Open the signin link in a web browser (my signin link looks like *.signin.aws.amazon.com/console)\
-    1. * is an identifier that belongs to me, and it stands for my account ID or my account alias
+    1. \* is an identifier that belongs to me, and it stands for my account ID or my account alias
 3. Log in using your root user email address or your account ID (or alias), IAM username and password\
     1. After you log in for the first time, you can create an IAM account in the IAM service
 4. In the search bar (located in the top menu next to the AWS logo and the grid of nine dots) type EC2
