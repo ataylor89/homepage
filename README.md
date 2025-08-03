@@ -119,7 +119,7 @@ Below are some instructions for hosting a homepage on AWS.
         ```
         [root@ip-ww-xx-yy-zz homepage]# python app.py &
         [1] [processid]
-        [root@ip-www-xx-yy-zz homepage]#  * Serving Flask app 'app'
+        [root@ip-ww-xx-yy-zz homepage]#  * Serving Flask app 'app'
          * Debug mode: off
         WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
          * Running on all addresses (0.0.0.0)
