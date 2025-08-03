@@ -34,10 +34,10 @@ Below are some instructions for hosting a homepage on AWS.
 12.3 The key pair type should be RSA and the private key file format should be .pem.\
 12.4 Click on "Create key pair".\
 12.5 The pem file (in my case, myserver.pem) gets saved to your Downloads folder if you have MacOS.\
-12.6 In Terminal I type the command "mv ~/Downloads/myserver.pem ~/myserver.pem" to put it in my user directory.\
+12.6 In Terminal I type the command "mv ~/Downloads/myserver.pem ~/myserver.pem" to put it in my user directory.
 13. We are now going to create a security group that allows SSH, HTTP, and HTTPS traffic.\
 13.1 Under "Network settings", under "Firewall", we want "Create security group" to be selected.\
-13.2 Check "Allow SSH traffic from Anywhere", "Allow HTTPS traffic from the internet", and "Allow HTTP traffic from the internet".\
+13.2 Check "Allow SSH traffic from Anywhere", "Allow HTTPS traffic from the internet", and "Allow HTTP traffic from the internet".
 14. We are now going to edit the user data under "Advanced details"\
 14.1 The user data is a script that is run when the instance is started for the very first time\
 14.2 Under "Advanced details", at the very bottom under "User data - optional", copy/paste the following script:\
