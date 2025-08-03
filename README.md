@@ -126,7 +126,7 @@ Below are some instructions for hosting a homepage on AWS.
          * Running on http://127.0.0.1:80
          * Running on http://ww.xx.yy.zz:80
         Press CTRL+C to quit
-    8. You can press the <return> key to get back to the command prompt.
+    8. You can press the return key to get back to the command prompt.
     9. To see the process, you can type the command "jobs" in the command prompt.
     10. To see the process, you can also type "ps aux | grep python" or "ps aux | grep [processid]" in the command prompt.
     11. To bring the job to the foreground, you can type "fg 1" or "fg %1".
@@ -140,7 +140,7 @@ Below are some instructions for hosting a homepage on AWS.
         5. You can stop the process with the key sequence control+z.
         6. You can resume the process with the command "bg #processid". For me it's "bg #3876".
 21. Assuming that the Python application is running, copy the public IPv4 address to your clipboard, and open it in a web browser
-    1. I just paste the public IP address into my web browser's address bar, and press the <return> key
+    1. I just paste the public IP address into my web browser's address bar, and press the return key
     2. The sample homepage should appear in your web browser
     3. It should say "Sample homepage" in bold, and underneath it, "This is a sample homepage."
     4. Congratulations! You just created a website on AWS cloud.
