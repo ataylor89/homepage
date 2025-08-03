@@ -108,4 +108,65 @@ Below are some instructions for hosting a homepage on AWS.
     11. After you have logged in via ssh, you should see a prompt that says "[ec2-user@ip-ww-xx-yy-zz ~]$"
     12. The numbers ww-xx-yy-zz are your private IP address
     13. Once you see this prompt, you can type the command "ls -als" to see the contents of your user directory
-20. More to follow
+20. Now we are going to run the application.
+    1. We should be logged into our EC2 instance via ssh. Type the commands "ls" or "ls -als" in the prompt.
+    2. You should see the folder "homepage" appear in the listing, because we downloaded it in the user data script.
+    3. Type the command "cd homepage".
+    4. In order to run the application on port 80, we need to be the root user. Type the command "sudo su".
+    5. Now type the command "python app.py &". This starts the web server and runs the application.
+    6. The ampersand (&) runs the process in the background.
+    7. The command prompt should look like this:
+        ```
+        [root@ip-ww-xx-yy-zz homepage]# python app.py &
+        [1] [processid]
+        [root@ip-www-xx-yy-zz homepage]#  * Serving Flask app 'app'
+         * Debug mode: off
+        WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+         * Running on all addresses (0.0.0.0)
+         * Running on http://127.0.0.1:80
+         * Running on http://ww.xx.yy.zz:80
+        Press CTRL+C to quit
+    8. You can press the <return> key to get back to the command prompt.
+    9. To see the process, you can type the command "jobs" in the command prompt.
+    10. To see the process, you can also type "ps aux | grep python" or "ps aux | grep [processid]" in the command prompt.
+    11. To bring the job to the foreground, you can type "fg 1" or "fg %1".
+    12. To stop the process, you can type the key sequence control+z when it's in the foreground.
+    13. To resume the process, you can type the command "bg %1" in the command prompt.
+    14. You can practice bringing the process to the foreground with the command "fg %1"...
+        1. Then you can stop the process with the key sequence control+z...
+        2. Then you can resume the process with the command "bg %1".
+        3. You can get the job number by typing the command "jobs" in the command prompt.
+        4. You can also bring the process to the foreground with the command "fg #processid". For me it's "fg #3876".
+        5. You can stop the process with the key sequence control+z.
+        6. You can resume the process with the command "bg #processid". For me it's "bg #3876".
+    15. Assuming that the Python application is running, copy the public IPv4 address to your clipboard, and open it in a web browser
+        1. I just paste the public IP address into my web browser's address bar, and press the <return> key
+        2. The sample homepage should appear in your web browser
+        3. It should say "Sample homepage" in bold, and underneath it, "This is a sample homepage."
+        4. Congratulations! You just created a website on AWS cloud.
+        5. If anything isn't working for you, you can try logging out of SSH and logging back in
+        6. It's possible you don't see the homepage folder in your user directory...
+        7. It's possible that your bash aliases have not been set up yet...
+        8. In both cases, it might help to log out of SSH and log back into SSH
+        9. You can edit the sample homepage and make it your own
+        10. To save money, you can use the t2.micro instance type, and stop the instance when you're not using it
+
+I hope these instructions help.
+
+It's possible that I missed something in the instructions.
+
+If it's not working for you, don't worry. It's possible that you will figure out what the problem is, and solve the problem in time. It's also possible that you can learn from the instructions, and write your own instructions, and write instructions that work for you.
+
+Over the course of this document, we have learned about AWS cloud, python, the Flask framework, and shell scripting.
+
+We have also learned about the EC2 web service and how to create an EC2 instance and log into it via ssh.
+
+I would like to keep this section short (relatively short, that is) so I will end it here.
+
+I might add new sections to this readme over time.
+
+Thanks for reading.
+
+Today is Sunday August 3, 2025.
+
+I wish everyone a good evening (if it's evening for you) or a good morning (if it's morning for you) or a good afternoon (if it's the afternoon).
