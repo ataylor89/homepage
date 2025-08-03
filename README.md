@@ -43,13 +43,35 @@ Below are some instructions for hosting a homepage on AWS.
 14.2 Under "Advanced details", at the very bottom under "User data - optional", copy/paste the following script:
     ```
     #!/bin/bash
+
+    # Step 1. Install python3 and pip3
     sudo yum update -y
     sudo yum install python3 -y
     sudo yum install python3-pip -y
-    sudo su
-    pip3 install Flask
+
+    # Step 2. Install Flask for the ec2-user
     sudo su ec2-user
     pip3 install Flask
+
+    # Step 3. Install Flask for the root user
+    sudo su
+    pip3 install Flask
+
+    # Step 4. Update the bashrc file for the root user
+    cat << EOF >> /root/.bashrc
+
+    # Aliases
+    alias python=/usr/bin/python3
+    alias pip=/usr/bin/pip3
+    EOF
+
+    # Step 5. Update the bashrc file for the ec2-user
+    cat << EOF >> /home/ec2-user/.bashrc
+
+    # Aliases
+    alias python=/usr/bin/python3
+    alias pip=/usr/bin/pip3
+    EOF
 15. I need to add this line in order to pick up where I left off...\
 15.1 The script (above) installs pip, which is Python's package manager\
 15.2 The script (above) also installs the Flask package, which we will use to create a web server\
