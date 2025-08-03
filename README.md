@@ -46,7 +46,7 @@ Below are some instructions for hosting a homepage on AWS.
     pip install Flask
     sudo su
     pip install Flask
-15. I need to add this line in order to pick up where I left off...
+15. I need to add this line in order to pick up where I left off...\
 15.1 The script (above) installs pip, which is Python's package manager\
 15.2 The script (above) also installs the Flask package, which we will use to create a web server\
 15.3 The script (above) installs Flask for both the ec2-user account and the root user account\
