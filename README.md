@@ -72,6 +72,20 @@ Below are some instructions for hosting a homepage on AWS.
     alias python=/usr/bin/python3
     alias pip=/usr/bin/pip3
     EOF
+
+    # Step 6. Download the code from Github
+    cd /home/ec2-user
+    mkdir homepage
+    mkdir -p homepage/app/templates
+    mkdir -p homepage/app/static/css
+    cd homepage
+    export prefix="https://raw.githubusercontent.com/ataylor89/samplehomepage/refs/heads/main"
+    curl -O $prefix/.gitignore
+    curl -O $prefix/app.py
+    curl -o app/__init__.py $prefix/app/__init__.py
+    curl -o app/views.py $prefix/app/views.py
+    curl -o app/templates/index.html $prefix/app/templates/index.html
+    curl -o app/static/css/stylesheet.css $prefix/app/static/css/stylesheet.css
 15. Review your selections on the right under "Summary", and then click "Launch instance" on the right
 16. When your instance has initialized, go to EC2 > Instances, and you'll see your instance in the menu
 17. Check the checkbox that corresponds to your instance, and this will cause the instance summary to appear at the bottom
