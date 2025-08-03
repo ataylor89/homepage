@@ -139,17 +139,17 @@ Below are some instructions for hosting a homepage on AWS.
         4. You can also bring the process to the foreground with the command "fg #processid". For me it's "fg #3876".
         5. You can stop the process with the key sequence control+z.
         6. You can resume the process with the command "bg #processid". For me it's "bg #3876".
-    15. Assuming that the Python application is running, copy the public IPv4 address to your clipboard, and open it in a web browser
-        1. I just paste the public IP address into my web browser's address bar, and press the <return> key
-        2. The sample homepage should appear in your web browser
-        3. It should say "Sample homepage" in bold, and underneath it, "This is a sample homepage."
-        4. Congratulations! You just created a website on AWS cloud.
-        5. If anything isn't working for you, you can try logging out of SSH and logging back in
-        6. It's possible you don't see the homepage folder in your user directory...
-        7. It's possible that your bash aliases have not been set up yet...
-        8. In both cases, it might help to log out of SSH and log back into SSH
-        9. You can edit the sample homepage and make it your own
-        10. To save money, you can use the t2.micro instance type, and stop the instance when you're not using it
+21. Assuming that the Python application is running, copy the public IPv4 address to your clipboard, and open it in a web browser
+    1. I just paste the public IP address into my web browser's address bar, and press the <return> key
+    2. The sample homepage should appear in your web browser
+    3. It should say "Sample homepage" in bold, and underneath it, "This is a sample homepage."
+    4. Congratulations! You just created a website on AWS cloud.
+    5. If anything isn't working for you, you can try logging out of SSH and logging back in
+    6. It's possible you don't see the homepage folder in your user directory...
+    7. It's possible that your bash aliases have not been set up yet...
+    8. In both cases, it might help to log out of SSH and log back into SSH
+    9. You can edit the sample homepage and make it your own
+    10. To save money, you can use the t2.micro instance type, and stop the instance when you're not using it
 
 I hope these instructions help.
 
