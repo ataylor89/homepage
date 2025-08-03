@@ -48,7 +48,7 @@ Below are some instructions for hosting a homepage on AWS.
 14.3 The script (above) installs pip, which is Python's package manager\
 14.4 The script (above) also installs the Flask package, which we will use to create a web server\
 14.5 The script (above) installs Flask for both the ec2-user account and the root user account\
-14.6 We need the root user account in order to run a server on port 80, so we install Flask on the root user account as well\
+14.6 We need the root user account in order to run a server on port 80, so we install Flask on the root user account as well
 15. Review your selections on the right under "Summary", and then click "Launch instance" on the right
 16. When your instance has initialized, go to EC2 > Instances, and you'll see your instance in the menu
 17. Check the checkbox that corresponds to your instance, and this will cause the instance summary to appear at the bottom
@@ -66,5 +66,5 @@ Below are some instructions for hosting a homepage on AWS.
 19.10 A prompt should appear that asks you if you want to connect. Type "yes" and click enter.\
 19.11 After you have logged in via ssh, you should see a prompt that says "[ec2-user@ip-ww-xx-yy-zz ~]$"\
 19.12 The numbers ww-xx-yy-zz are your private IP address\
-19.13 Once you see this prompt, you can type the command "ls -als" to see the contents of your user directory\
+19.13 Once you see this prompt, you can type the command "ls -als" to see the contents of your user directory
 20. More to follow
