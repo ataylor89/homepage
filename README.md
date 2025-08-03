@@ -55,7 +55,7 @@ Below are some instructions for hosting a homepage on AWS.
 17. When your instance has initialized, go to EC2 > Instances, and you'll see your instance in the menu
 18. Check the checkbox that corresponds to your instance, and this will cause the instance summary to appear at the bottom
 19. The public IPv4 address for your instance appears under "Instance summary". Copy it to your clipboard by clicking on the square icon.
-20. Open Terminal. We are going to SSH into our instance.
+20. Open Terminal. We are going to SSH into our instance.\
 20.1 Make sure that your .pem file is located in your user directory. Mine is called myserver.pem.\
 20.2 In Terminal type the command "stat -f %A ~/<filename>.pem". I typed "stat -f %A ~/myserver.pem".\
 20.3 On my computer, the default file permissions are 644. We need to change them to 400.\
