@@ -86,6 +86,10 @@ Below are some instructions for hosting a homepage on AWS.
     curl -o app/views.py $prefix/app/views.py
     curl -o app/templates/index.html $prefix/app/templates/index.html
     curl -o app/static/css/stylesheet.css $prefix/app/static/css/stylesheet.css
+    chown -R ec2-user .
+    chgrp -R ec2-user .
+    find . -type f -exec chmod 644 {} \;
+    find . -type d -exec chmod 755 {} \;
 15. Review your selections on the right under "Summary", and then click "Launch instance" on the right
 16. When your instance has initialized, go to EC2 > Instances, and you'll see your instance in the menu
 17. Check the checkbox that corresponds to your instance, and this will cause the instance summary to appear at the bottom
