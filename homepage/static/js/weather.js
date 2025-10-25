@@ -49,7 +49,6 @@ $(document).ready(function() {
             $('#forecast tr:not(:first-child)').remove();
             for (let i = 0; i < data['periods'].length; i++) {
                 let period = data['periods'][i];
-                console.dir(period);
                 let tr = $('<tr/>');
                 let td0 = $('<td/>');
                 td0.html(period['name']);
