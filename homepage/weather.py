@@ -14,7 +14,7 @@ def get_forecast(latitude, longitude):
 
 def format_json(data):
     forecast = {}
-    forecast['elevation'] = f'{0} m'.format(data['elevation']['value'])
+    forecast['elevation'] = format('%f m' %data['elevation']['value'])
     forecast['generatedAt'] = data['generatedAt']
     forecast['units'] = data['units']
     forecast['periods'] = []
