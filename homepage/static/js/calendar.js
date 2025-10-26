@@ -4,7 +4,7 @@ class Calendar {
     data;
 
     constructor() {
-        const today = new Date();
+        let today = new Date();
         this.year = today.getFullYear();
         this.month = today.getMonth();
     }
@@ -75,10 +75,10 @@ class Calendar {
         else {
             this.month = month;
             $('#calendar tbody').empty();
-            const calendar = this.data.calendar.months[month];
-            const daysInMonth = calendar.days;
-            const offset = calendar.offset;
-            const numRows = Math.ceil((daysInMonth + offset) / 7);
+            let calendar = this.data.calendar.months[month];
+            let daysInMonth = calendar.days;
+            let offset = calendar.offset;
+            let numRows = Math.ceil((daysInMonth + offset) / 7);
             let dayOfMonth = 1 - offset;
             for (let i = 0; i < numRows; i++) {
                 let tr = $('<tr/>');
@@ -112,6 +112,6 @@ class Calendar {
 }
 
 $(document).ready(function() {
-    const calendar = new Calendar();
+    let calendar = new Calendar();
     calendar.init();
 });
