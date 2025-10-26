@@ -90,7 +90,7 @@ class Calendar {
                 }
                 $('#calendar tbody').append(tr);
             }
-            $('#calendar_hdr').html(calendar.monthname + ' ' + year);
+            $('#calendar_hdr').html(calendar.month + ' ' + year);
             this.updateButtons();
         }
     }

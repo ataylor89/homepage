@@ -1,0 +1,116 @@
+{
+    "year": 2025,
+    "leap_year": false,
+    "months": [
+        {
+            "month": "January",
+            "days": 31,
+            "offset": 3,
+            "entries": {
+                "1": "New Year's Day"
+            }
+        },
+        {
+            "month": "February",
+            "days": 28,
+            "offset": 6,
+            "entries": {
+                "14": "Valentine's Day"
+            }
+        },
+        {
+            "month": "March",
+            "days": 31,
+            "offset": 6,
+            "entries": {
+                "17": "Saint Patrick's Day",
+                "20": "March Equinox"
+            }
+        },
+        {
+            "month": "April",
+            "days": 30,
+            "offset": 2,
+            "entries": {
+                "20": "Easter Sunday",
+                "21": "Easter Monday"
+            }
+        },
+        {
+            "month": "May",
+            "days": 31,
+            "offset": 4,
+            "entries": {
+                "11": "Mother's Day"
+            }
+        },
+        {
+            "month": "June",
+            "days": 30,
+            "offset": 0,
+            "entries": {
+                "15": "Father's Day",
+                "19": "Juneteenth",
+                "21": "June Solstice"
+            }
+        },
+        {
+            "month": "July",
+            "days": 31,
+            "offset": 2,
+            "entries": {}
+        },
+        {
+            "month": "August",
+            "days": 31,
+            "offset": 5,
+            "entries": {}
+        },
+        {
+            "month": "September",
+            "days": 30,
+            "offset": 1,
+            "entries": {
+                "1": "Labor Day",
+                "22": "September Equinox"
+            }
+        },
+        {
+            "month": "October",
+            "days": 31,
+            "offset": 3,
+            "entries": {
+                "31": "Halloween"
+            }
+        },
+        {
+            "month": "November",
+            "days": 30,
+            "offset": 6,
+            "entries": {
+                "1": "World Vegan Day",
+                "13": "World Kindness Day",
+                "27": "Thanksgiving Day"
+            }
+        },
+        {
+            "month": "December",
+            "days": 31,
+            "offset": 1,
+            "entries": {
+                "14": "Hannukah",
+                "15": "Hannukah",
+                "16": "Hannukah",
+                "17": "Hannukah",
+                "18": "Hannnukah",
+                "19": "Hannukah",
+                "20": "Hannukah",
+                "21": "Hannukah<br/>December Solstice",
+                "22": "Hannukah",
+                "24": "Christmas Eve",
+                "25": "Christmas Day",
+                "31": "New Year's Eve"
+            }
+        }
+    ]
+}
