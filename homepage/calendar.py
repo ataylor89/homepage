@@ -117,6 +117,8 @@ calendars = {
                 'days': 30,
                 'offset': 6,
                 'entries': {
+                    1: 'World Vegan Day',
+                    13: 'World Kindness Day',
                     27: 'Thanksgiving Day'
                 }
             },
@@ -126,7 +128,15 @@ calendars = {
                 'days': 31,
                 'offset': 1,
                 'entries': {
-                    21: 'December Solstice',
+                    14: 'Hannukah',
+                    15: 'Hannukah',
+                    16: 'Hannukah',
+                    17: 'Hannukah',
+                    18: 'Hannnukah',
+                    19: 'Hannukah',
+                    20: 'Hannukah',
+                    21: 'Hannukah<br/>December Solstice',
+                    22: 'Hannukah',
                     24: 'Christmas Eve',
                     25: 'Christmas Day',
                     31: 'New Year\'s Eve'
