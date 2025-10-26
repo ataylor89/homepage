@@ -60,10 +60,10 @@ $(document).ready(function() {
                 td2.html(period['probabilityOfPrecipitation']);
                 tr.append(td2);
                 let td3 = $('<td/>');
-                td3.html(period['windDirection']);
+                td3.html(period['windSpeed']);
                 tr.append(td3);
                 let td4 = $('<td/>');
-                td4.html(period['windSpeed']);
+                td4.html(period['windDirection']);
                 tr.append(td4);
                 let td5 = $('<td/>');
                 td5.html(period['shortForecast']);
