@@ -42,7 +42,7 @@ $(document).ready(function() {
     $('input[name="search_param"]').on('change', handleRadioEvent);
     $("#searchform").on('submit', function(e) {
         e.preventDefault();
-        $.post('/forecast', $('#searchform').serialize(), function(data) {
+        $.post('/weather_data', $('#searchform').serialize(), function(data) {
             $('input[name="city"]').val(data['city']);
             $('input[name="latitude"]').val(data['latitude']);
             $('input[name="longitude"]').val(data['longitude']);

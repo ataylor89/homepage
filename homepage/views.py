@@ -6,11 +6,11 @@ def home():
     return render_template('index.html')
 
 @app.route('/weather', methods=['GET'])
-def weather_forecast():
+def weather_view():
     return render_template('weather.html')
 
-@app.route('/forecast', methods=['POST'])
-def forecast():
+@app.route('/weather_data', methods=['POST'])
+def weather_data():
     param = request.form['search_param']
     if param == 'city':
         city = request.form['city']
