@@ -20,3 +20,7 @@ table#forecast, table#forecast th, table#forecast td {
     border-collapse: collapse;
     padding: 10px;
 }
+
+table#forecast th {
+    white-space: nowrap;
+}
