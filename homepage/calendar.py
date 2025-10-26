@@ -9,7 +9,4 @@ def get(year):
         calendar_file = open(calendar_path, 'r')
         metadata = json.load(metadata_file)
         calendar = json.load(calendar_file)
-        return {
-            'metadata': metadata,
-            'calendar': calendar
-        }
+        return {'metadata': metadata, 'calendar': calendar}
