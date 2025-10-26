@@ -72,7 +72,9 @@
             "offset": 1,
             "entries": {
                 "1": "Labor Day",
-                "22": "September Equinox"
+                "22": "Rosh Hashanah<br/>September Equinox",
+                "23": "Rosh Hashanah",
+                "24": "Rosh Hashanah"
             }
         },
         {
