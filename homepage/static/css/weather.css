@@ -2,7 +2,7 @@ div#container {
     margin: 20px;
 }
 
-table {
+table.search {
     border-spacing: 0;
 }
 
@@ -15,12 +15,27 @@ table.search td {
     margin-bottom: 10px;
 }
 
-table#forecast, table#forecast th, table#forecast td {
-    border: 1px solid black;
+table#forecast {
     border-collapse: collapse;
+}
+
+table#forecast th, table#forecast td {
+    border: 1px solid black;
     padding: 10px;
 }
 
 table#forecast th {
     white-space: nowrap;
+}
+
+table#forecast th:nth-child(1) {
+    width: 115px;
+}
+
+table#forecast th:nth-child(4) {
+    width: 100px;
+}
+
+table#forecast th:nth-child(6) {
+    width: 115px;
 }
