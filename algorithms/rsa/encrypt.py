@@ -1,7 +1,3 @@
-from algorithms.rsa import parser
-from algorithms.rsa import util
-import sys
-
 def encrypt(msg, key):
     ciphertext = ""
     codes = msg.encode("utf-8")
@@ -14,15 +10,21 @@ def encrypt(msg, key):
         ciphertext += encoding
     return ciphertext
 
-def main():
-    if len(sys.argv) != 2: 
-        print("Usage: python encrypt.py <messagefile>")
-        sys.exit(0)
-    msgfile = open(sys.argv[1], "r")
-    msg = msgfile.read()
-    key = parser.parse_key("key.txt")
-    ciphertext = encrypt(msg, key)
-    print(ciphertext, end="")
-
 if __name__ == "__main__":
-    main()
+    import parser, util, argparse
+    argparser = argparse.ArgumentParser(prog="encrypt.py", description="Encrypt a message")
+    argparser.add_argument("-m", "--msgfile", type=str, required=True)
+    argparser.add_argument("-k", "--keyfile", type=str, default="key.txt")
+    argparser.add_argument("-o", "--output", type=str)
+    args = argparser.parse_args()
+    msgfile = open(args.msgfile, "r")
+    msg = msgfile.read()
+    key = parser.parse_key(args.keyfile)
+    ciphertext = encrypt(msg, key)
+    if args.output:
+        outfile = open(args.output, "w")
+        outfile.write(ciphertext)
+    else:
+        print(ciphertext, end="")
+else:
+    from algorithms.rsa import parser, util

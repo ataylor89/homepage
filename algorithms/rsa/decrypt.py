@@ -1,7 +1,3 @@
-from algorithms.rsa import parser
-from algorithms.rsa import util
-import sys
-
 def decrypt(ciphertext, key):
     message = ""
     keylen = len(key)
@@ -19,16 +15,22 @@ def decrypt(ciphertext, key):
         start += size
     return message
 
-def main():
-    if len(sys.argv) != 2:
-        print("Usage: python decrypt.py <cipherfile>")
-        sys.exit(0)
-    cipherfile = open(sys.argv[1], "rb")
+if __name__ == "__main__":
+    import parser, util, argparse
+    argparser = argparse.ArgumentParser(prog="decrypt.py", description="Decrypt a message")
+    argparser.add_argument("-c", "--cipherfile", type=str, required=True)
+    argparser.add_argument("-k", "--keyfile", type=str, default="key.txt")
+    argparser.add_argument("-o", "--output", type=str)
+    args = argparser.parse_args()
+    cipherfile = open(args.cipherfile, "rb")
     ciphertext = cipherfile.read()
     ciphertext = ciphertext.decode("utf-8")
-    key = parser.parse_key("key.txt")
+    key = parser.parse_key(args.keyfile)
     msg = decrypt(ciphertext, key)
-    print(msg, end="")
-
-if __name__ == "__main__":
-    main()
+    if args.output:
+        outfile = open(args.output, "w")
+        outfile.write(msg)
+    else:
+        print(msg, end="")
+else:
+    from algorithms.rsa import parser, util
