@@ -27,4 +27,4 @@ if __name__ == "__main__":
     else:
         print(ciphertext, end="")
 else:
-    from algorithms.rsa import parser, util
+    from algorithms.rsa import util

@@ -33,4 +33,4 @@ if __name__ == "__main__":
     else:
         print(msg, end="")
 else:
-    from algorithms.rsa import parser, util
+    from algorithms.rsa import util
