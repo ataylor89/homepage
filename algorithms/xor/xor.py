@@ -1,5 +1,3 @@
-import sys
-
 def crypt(msg, key):
     msglen = len(msg)
     keylen = len(key)
@@ -8,15 +6,20 @@ def crypt(msg, key):
     out = [chr(msgcodes[i] ^ keycodes[i % keylen]) for i in range(0, msglen)]
     return "".join(out)
 
-def main():
-    if len(sys.argv) != 2:
-        print("Usage: python xor.py <msgfile>")
-        sys.exit(0)
-    msgfile = open(sys.argv[1], "r")
-    msg = msgfile.read()
-    keyfile = open("key.txt", "r")
-    key = keyfile.read()
-    print(crypt(msg, key), end="")
-    
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(prog="xor.py", description="Encrypt or decrypt a message")
+    parser.add_argument("-m", "--msgfile", type=str, required=True)
+    parser.add_argument("-k", "--keyfile", type=str, default="key.txt")
+    parser.add_argument("-o", "--output", type=str)
+    args = parser.parse_args()
+    with open(args.msgfile, "r") as msgfile:
+        msg = msgfile.read()
+    with open(args.keyfile, "r") as keyfile:
+        key = keyfile.read()
+    output = crypt(msg, key)
+    if args.output:
+        with open(args.output, "w") as outputfile:
+            outputfile.write(output)
+    else:
+        print(output, end="")
