@@ -34,15 +34,15 @@ def crypt(algorithm, key_name, message, action):
     elif algorithm == 'XOR':
         if key_name in key_paths['XOR']:
             key_path = key_paths['XOR'][key_name]
-            xor_keyfile = open(key_path, 'r')
-            xor_key = xor_keyfile.read()
+            key_file = open(key_path, 'r')
+            key = key_file.read()
             if action == 'encrypt':
-                ciphertext = xor.crypt(message, xor_key)
+                ciphertext = xor.crypt(message, key)
                 hexstr = ciphertext.encode('utf-8').hex()
                 return hexstr
             elif action == 'decrypt':
                 ciphertext = bytes.fromhex(message).decode('utf-8')
-                plaintext = xor.crypt(ciphertext, xor_key)
+                plaintext = xor.crypt(ciphertext, key)
                 return plaintext
     elif algorithm == 'ROT13':
         return rot13.rot13(message)
