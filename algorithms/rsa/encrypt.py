@@ -17,13 +17,13 @@ if __name__ == "__main__":
     argparser.add_argument("-k", "--keyfile", type=str, default="key.txt")
     argparser.add_argument("-o", "--output", type=str)
     args = argparser.parse_args()
-    msgfile = open(args.msgfile, "r")
-    msg = msgfile.read()
+    with open(args.msgfile, "r") as msgfile:
+        msg = msgfile.read()
     key = parser.parse_key(args.keyfile)
     ciphertext = encrypt(msg, key)
     if args.output:
-        outfile = open(args.output, "w")
-        outfile.write(ciphertext)
+        with open(args.output, "w") as outputfile:
+            outputfile.write(ciphertext)
     else:
         print(ciphertext, end="")
 else:

@@ -22,14 +22,14 @@ if __name__ == "__main__":
     argparser.add_argument("-k", "--keyfile", type=str, default="key.txt")
     argparser.add_argument("-o", "--output", type=str)
     args = argparser.parse_args()
-    cipherfile = open(args.cipherfile, "rb")
-    ciphertext = cipherfile.read()
+    with open(args.cipherfile, "rb") as cipherfile:
+        ciphertext = cipherfile.read()
     ciphertext = ciphertext.decode("utf-8")
     key = parser.parse_key(args.keyfile)
     msg = decrypt(ciphertext, key)
     if args.output:
-        outfile = open(args.output, "w")
-        outfile.write(msg)
+        with open(args.output, "w") as outputfile:
+            outputfile.write(msg)
     else:
         print(msg, end="")
 else:
