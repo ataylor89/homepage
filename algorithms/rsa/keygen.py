@@ -32,7 +32,7 @@ def main():
     filepath = args.output
     try:
         create_key_pair(keylen, tmin, tmax, filepath)
-        print("Created key pair in %s" %filepath)
+        print("Created keyfile %s" %filepath)
     except Exception as err:
         print(err)
     
