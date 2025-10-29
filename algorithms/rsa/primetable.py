@@ -1,7 +1,7 @@
 import pickle
-import sys
 import os
 import time
+import argparse
 
 table = []
 
@@ -44,14 +44,14 @@ def save(path='primetable.pickle'):
             pickle.dump(table, file)
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: python primetable.py <numberofprimes>")
-        return
+    parser = argparse.ArgumentParser(prog="primetable.py", description="Generate a prime table")
+    parser.add_argument("-n", "--numberofprimes", type=float, default=1e4)
+    args = parser.parse_args()
     try:
-        n = int(float(sys.argv[1]))
+        n = int(args.numberofprimes)
         assert n > 0
     except:
-        print("Unable to parse n as a positive integer")
+        print("Unable to parse the command-line argument as a positive integer")
         return
     load()
     if len(table) >= n:
