@@ -20,7 +20,7 @@ def create_key_pair(keylen, tmin, tmax, filepath):
 
 def main():
     primetable.load()
-    parser = argparse.ArgumentParser(prog="keygen.py", description="Create a public key and a private key", epilog="Thanks for reading")
+    parser = argparse.ArgumentParser(prog="keygen.py", description="Create a public key and a private key")
     parser.add_argument("-kl", "--keylength", type=int, required=True)
     parser.add_argument("-tmin", "--min_threshold", type=float, default=0)
     parser.add_argument("-tmax", "--max_threshold", type=float, default=primetable.get(-1))
