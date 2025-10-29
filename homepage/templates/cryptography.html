@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Andrew's homepage</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="static/js/cryptography.js"></script>
+    <link rel="stylesheet" href="static/css/stylesheet.css">
+    <link rel="stylesheet" href="static/css/cryptography.css"/>
+</head>
+<body>
+    <div id="header">Andrew's homepage</div>
+    <ul id="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/weather">Weather</a></li>
+        <li><a href="/calendar">Calendar</a></li>
+        <li><a href="/cryptography" class="active">Cryptography</a></li>
+        <li><a href="/sudoku">Sudoku</a></li>
+        <li><a href="/chess">Chess</a></li>
+        <li><a href="/math">Math</a></li>
+        <li><a href="/cs">CS</a></li>
+        <li><a href="/biblestudy">Bible Study</a></li>
+    </ul>
+    <div id="container">
+        <form id="cryptography" action="/cryptography_service" method="post" accept-charset="UTF-8">
+            <div class="form-group">
+                <label for="algorithm">Algorithm:</label>
+                <select id="algorithm" name="algorithm">
+                    <option value="RSA">RSA</option>
+                    <option value="XOR">XOR</option>
+                    <option value="ROT13">ROT13</option>
+                    <option value="ROT88">ROT88</option>
+                </select>
+            </div>
+            <div id="key_selection" class="form-group">
+                <label for="key">Key:</label>
+                <select id="key" name="key">
+                    <option value="small">small</option>
+                    <option value="medium">medium</option>
+                    <option value="large">large</option>
+                    <option value="default" selected="selected">default</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="hidden" id="action" name="action" value="">
+                <button type="submit" onclick="this.form.action.value='encrypt'" disabled>Encrypt</button>
+                <button type="submit" onclick="this.form.action.value='decrypt'" disabled>Decrypt</button>
+            </div>
+            <div id="io_container" class="form-group">
+                <div id="input_container">
+                    <label for="input">Input</label><br>
+                    <textarea id="input" name="input" rows="20" cols="75"></textarea>
+                </div>
+                <div id="output_container">
+                    <label for="output">Output</label><br>
+                    <textarea id="output" name="output" rows="20" cols="75"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

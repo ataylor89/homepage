@@ -1,5 +1,5 @@
 from flask import request, render_template, jsonify
-from homepage import app, weather, calendar
+from homepage import app, weather, calendar, cryptography
 
 @app.route('/', methods=['GET'])
 def home():
@@ -33,6 +33,18 @@ def calendar_view():
 def calendar_data():
     year = int(request.form['year'])
     return jsonify(calendar.get(year))
+
+@app.route('/cryptography', methods=['GET'])
+def cryptography_view():
+    return render_template('cryptography.html')
+
+@app.route('/cryptography_service', methods=['POST'])
+def cryptography_service():
+    algorithm = request.form['algorithm']
+    key = request.form['key']
+    message = request.form['input']
+    action = request.form['action']
+    return cryptography.crypt(algorithm, key, message, action)
 
 @app.errorhandler(404)
 def page_not_found(error):
