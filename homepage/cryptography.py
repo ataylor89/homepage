@@ -1,19 +1,20 @@
 from algorithms.rsa import encrypt, decrypt, parser
 from algorithms.xor import xor
 from algorithms import rot13, rot88
+from homepage import project_root
 
 key_paths = {
     'RSA': {
-        'small': 'algorithms/rsa/keys/small.txt',
-        'medium': 'algorithms/rsa/keys/medium.txt',
-        'large': 'algorithms/rsa/keys/large.txt',
-        'default': 'algorithms/rsa/keys/large.txt'
+        'small': f'{project_root}/algorithms/rsa/keys/small.txt',
+        'medium': f'{project_root}/algorithms/rsa/keys/medium.txt',
+        'large': f'{project_root}/algorithms/rsa/keys/large.txt',
+        'default': f'{project_root}/algorithms/rsa/keys/large.txt'
     },
     'XOR': {
-        'small': 'algorithms/xor/keys/small.txt',
-        'medium': 'algorithms/xor/keys/medium.txt',
-        'large': 'algorithms/xor/keys/large.txt',
-        'default': 'algorithms/xor/keys/default.txt'
+        'small': f'{project_root}/algorithms/xor/keys/small.txt',
+        'medium': f'{project_root}/algorithms/xor/keys/medium.txt',
+        'large': f'{project_root}/algorithms/xor/keys/large.txt',
+        'default': f'{project_root}/algorithms/xor/keys/default.txt'
     }
 }
 
