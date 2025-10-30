@@ -1,5 +1,3 @@
-import sys
-
 table = {}
 
 for i in range(0, 26):
@@ -13,14 +11,22 @@ def rot13(message):
         result += substitution
     return result
 
-def main():
-    if len(sys.argv) != 2:
-        print("Usage: python rot13.py <msgfile>")
-        sys.exit(0)
-    file = open(sys.argv[1], "r")
-    message = file.read()
-    result = rot13(message)
-    print(result, end="")
-
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(prog="rot13.py", description="Encrypt or decrypt a message using rot13")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("message", type=str, nargs="?")
+    group.add_argument("-m", "--msgfile", type=str)
+    parser.add_argument("-o", "--output", type=str)
+    args = parser.parse_args()
+    if args.msgfile:
+        with open(args.msgfile, "r") as msgfile:
+            message = msgfile.read()
+    else:
+        message = args.message
+    output = rot13(message)
+    if args.output:
+        with open(args.output, "w") as outputfile:
+            outputfile.write(output)
+    else:
+        print(output, end="")
