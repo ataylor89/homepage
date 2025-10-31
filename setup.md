@@ -17,7 +17,7 @@ To run it locally, the following requirements have to be satisfied:
         - You can edit the weather page so that it uses longitude and latitude, but not place names, so that there is no need for geocoding
     - It's worth pointing out that an external library is a library external to the standard library of the programming language
     - Python, Java, C, C++ all have standard libraries
-    - The standard library is the built-in library, and the compiler or interpreter already knows where to find them
+    - The standard library is the built-in library, and the compiler or interpreter already knows where to find it
     - The homepage project depends on three software packages that are not part of the Python standard library: Flask, requests, and geopy
     - These software packages can be installed with the following commands:
         - You can run `pip install -r requirements.txt` from the project root directory, or...
