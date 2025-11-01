@@ -86,6 +86,14 @@
             "subjects": ["math"]
         },
         {
+            "entry": "Cauchy sequence",
+            "definitions": [
+                "A sequence of rational numbers aₙ is a Cauchy sequence if for every rational ε > 0 there exists an integer N ≥ 0 such that |aⱼ - aₖ| ≤ ε for all j, k ≥ N (source: Analysis I by Terence Tao)",
+                "A sequence of rational numbers aₙ is a Cauchy sequence if for every rational ε > 0 there exists an index after which any two elements are ε-close"
+            ],
+            "subjects": ["math"]
+        },
+        {
             "entry": "Combination",
             "definitions": [
                 "A combination of tactics"
