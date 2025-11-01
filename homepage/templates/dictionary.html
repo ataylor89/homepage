@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Andrew's homepage</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="static/js/dictionary.js"></script>
+    <link rel="stylesheet" href="static/css/stylesheet.css">
+    <link rel="stylesheet" href="static/css/dictionary.css"/>
+</head>
+<body>
+    <div id="header">Andrew's homepage</div>
+    <ul id="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/weather">Weather</a></li>
+        <li><a href="/calendar">Calendar</a></li>
+        <li><a href="/cryptography">Cryptography</a></li>
+        <li><a href="/dictionary" class="active">Dictionary</a></li>
+        <li><a href="/sudoku">Sudoku</a></li>
+        <li><a href="/chess">Chess</a></li>
+        <li><a href="/math">Math</a></li>
+        <li><a href="/cs">CS</a></li>
+        <li><a href="/biblestudy">Bible Study</a></li>
+    </ul>
+    <div id="container">
+        <form id="dictionary_form">
+            <div class="form-group">
+                <fieldset>
+                    <legend>Subjects:</legend>
+                    <input type="checkbox" id="math" name="subjects" value="math">
+                    <label for="math">Mathematics</label>
+                    <input type="checkbox" id="cs" name="subjects" value="cs">
+                    <label for="math">Computer Science</label>
+                    <input type="checkbox" id="chess" name="subjects" value="chess">
+                    <label for="math">Chess</label>
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <button type="submit">Search</button>
+            </div>
+        </form>
+        <table id="dictionary" style="display: none">
+            <thead>
+                <tr>
+                    <th>Word/Phrase</th>
+                    <th>Definitions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+</html>

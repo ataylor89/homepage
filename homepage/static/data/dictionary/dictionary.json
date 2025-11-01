@@ -1,0 +1,89 @@
+{
+    "name": "dictionary",
+    "language": "english",
+    "order": "alphabetical",
+    "entries": [
+        {
+            "entry": "Algebra",
+            "definitions": [
+                "Solving for an unknown",
+                "The study of equations",
+                "Arithmetic with variables"
+            ],
+            "subjects": ["math"]
+        },
+        {
+            "entry": "Algorithm",
+            "definitions": [
+                "A list of instructions"
+            ],
+            "subjects": ["math", "cs"]
+        },
+        {
+            "entry": "Analysis",
+            "definitions": [
+                "Analysis is the rigorous study of mathematical objects (source: Analysis I by Terence Tao)"
+            ],
+            "subjects": ["math"]
+        },
+        {
+            "entry": "Argument",
+            "definitions": [
+                "An argument is a series of statements that works toward a conclusion"
+            ],
+            "subjects": ["math"]
+        },
+        {
+            "entry": "Arithmetic",
+            "definitions": [
+                "Math using the basic arithmetic operations (e.g. + - * / powers roots and modulo)"
+            ],
+            "subjects": ["math"]
+        },
+        {
+            "entry": "ASCII",
+            "definitions": [
+                "An acronym meaning American Standard Code for Information Interchange",
+                "A 7-bit character encoding system"
+            ],
+            "subjects": ["cs"]
+        
+        },
+        {
+            "entry": "Binary",
+            "definitions": [
+                "A positional number system in base two"
+            ],
+            "subjects": ["math", "cs"]
+        },
+        {
+            "entry": "Combination",
+            "definitions": [
+                "A combination of tactics"
+            ],
+            "subjects": ["chess"]
+        },
+        {
+            "entry": "Decimal",
+            "definitions": [
+                "A positional number system in base ten"
+            ],
+            "subjects": ["math", "cs"]
+        },
+        {
+            "entry": "Hexadecimal",
+            "definitions": [
+                "A positional number system in base sixteen"
+            ],
+            "subjects": ["math", "cs"]
+        },
+        {
+            "entry": "Tactic",
+            "definitions": [
+                "A move; an attack; a type of attack",
+                "A move that achieves a desired outcome (e.g. a checkmate, a material advantage, or a desirable draw)"
+            ],
+            "subjects": ["chess"]
+        }
+    ]
+}

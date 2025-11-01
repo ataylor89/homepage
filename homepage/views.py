@@ -1,5 +1,5 @@
 from flask import request, render_template, jsonify
-from homepage import app, weather, calendar, cryptography
+from homepage import app, weather, calendar, cryptography, dictionary
 
 @app.route('/', methods=['GET'])
 def home():
@@ -45,6 +45,15 @@ def cryptography_service():
     message = request.form['input']
     action = request.form['action']
     return cryptography.crypt(algorithm, key, message, action)
+
+@app.route('/dictionary', methods=['GET'])
+def dictionary_view():
+    return render_template('dictionary.html')
+
+@app.route('/create_dictionary', methods=['POST'])
+def create_dictionary():
+    subjects = request.form.getlist('subjects')
+    return dictionary.create_dictionary(subjects)
 
 @app.errorhandler(404)
 def page_not_found(error):

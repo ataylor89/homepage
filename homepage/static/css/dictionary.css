@@ -1,0 +1,17 @@
+div#container {
+    margin: 20px;
+}
+
+div.form-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table#dictionary {
+    border-collapse: collapse;
+}
+
+table#dictionary th, table#dictionary td {
+    border: 1px solid;
+    padding: 10px;
+}
