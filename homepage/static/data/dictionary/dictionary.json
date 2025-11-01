@@ -65,7 +65,7 @@
         },
         {
             "entry": "Best move",
-            "definitions:" [
+            "definitions": [
                 "The best possible move"
             ],
             "subjects": ["math", "cs", "chess"]
