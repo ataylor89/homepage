@@ -50,6 +50,27 @@
         
         },
         {
+            "entry": "Best case scenario",
+            "definitions": [
+                "The best possible outcome"
+            ],
+            "subjects": ["math"]
+        },
+        {
+            "entry": "Best decision",
+            "definitions": [
+                "The best possible decision"
+            ],
+            "subjects": ["math", "cs", "chess"]
+        },
+        {
+            "entry": "Best move",
+            "definitions:" [
+                "The best possible move"
+            ],
+            "subjects": ["math", "cs", "chess"]
+        }
+        {
             "entry": "Binary",
             "definitions": [
                 "A positional number system in base two"
