@@ -78,6 +78,14 @@
             "subjects": ["math", "cs"]
         },
         {
+            "entry": "Calculus",
+            "definitions": [
+                "Calculating a slope or an area",
+                "Calculating a slope, area, or volume"
+            ],
+            "subjects": ["math"]
+        },
+        {
             "entry": "Combination",
             "definitions": [
                 "A combination of tactics"
