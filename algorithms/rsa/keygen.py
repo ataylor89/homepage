@@ -1,9 +1,7 @@
-from algorithms.rsa import primetable, keytable
+from algorithms.rsa import keytable
 import random
-import argparse
 
 def create_key_pair(keylen, tmin, tmax):
-    keytable.load()
     filtered = {}
     for k,v in keytable.table.items():
         if v[1] >= tmin and v[1] <= tmax and v[2] >= tmin and v[2] <= tmax:
