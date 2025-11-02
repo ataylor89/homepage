@@ -1,5 +1,4 @@
-import primetable
-import util
+from algorithms.rsa import primetable, util
 import math
 import pickle
 import sys
@@ -41,31 +40,31 @@ def generate(numkeys, tmin, tmax):
         q = primetable.get(j)
         n = p * q
 
-        print("n = %d, p = %d, q = %d" %(n, p, q))
+        # print("n = %d, p = %d, q = %d" %(n, p, q))
 
         if n in table:
             continue
 
         phi = math.lcm(p-1, q-1)
 
-        print("phi = %d" %phi)
+        # print("phi = %d" %phi)
 
         e = 0
         for e in range(2, phi):
             if math.gcd(e, phi) == 1:
                 break
 
-        print("e = %d" %e)
+        # print("e = %d" %e)
 
         d = 0
         for d in range(2, phi):
             if (d * e) % phi == 1:
                 break
 
-        print("d = %d" %d)
+        # print("d = %d" %d)
 
         if test(n, e, d):
-            print("Adding key (n=%d, p=%d, q=%d, phi=%d, e=%d, d=%d)" %(n, p, q, phi, e, d))
+            # print("Adding key (n=%d, p=%d, q=%d, phi=%d, e=%d, d=%d)" %(n, p, q, phi, e, d))
             table[n] = (n, p, q, phi, e, d)
             count += 1
 
@@ -92,27 +91,3 @@ def save(path='keytable.pickle'):
     if len(table) > 0:
         with open(path, "wb") as file:
             pickle.dump(table, file)
-
-def main():
-    primetable.load()
-    parser = argparse.ArgumentParser(prog="keytable.py", description="Generate RSA keys")
-    parser.add_argument("-n", "--numberofkeys", type=int, required=True)
-    parser.add_argument("-tmin", "--min_threshold", type=float, default=0)
-    parser.add_argument("-tmax", "--max_threshold", type=float, default=primetable.get(-1))
-    args = parser.parse_args()
-    numkeys = args.numberofkeys
-    tmin = int(args.min_threshold)
-    tmax = int(args.max_threshold)
-    load()
-    st = time.time()
-    try:
-        generate(numkeys, tmin, tmax)
-    except Exception as err:
-        print(err)
-        return
-    te = time.time() - st
-    save()
-    print("Generated %d keys for tmin=%d and tmax=%d in %s seconds" %(numkeys, tmin, tmax, te))
-
-if __name__ == "__main__":
-    main()
