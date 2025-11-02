@@ -5,7 +5,6 @@ import sys
 import os
 import random
 import time
-import argparse
 
 table = {}
 test_message = "hello world! my name is andrew"
