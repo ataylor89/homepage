@@ -94,6 +94,22 @@
             "subjects": ["math"]
         },
         {
+            "entry": "Character decoding",
+            "definitions": [
+                "Converting code points into characters",
+                "Converting numeric data into text"
+            ],
+            "subjects": ["cs"]
+        },
+        {
+            "entry": "Character encoding",
+            "definitions": [
+                "Converting characters into code points",
+                "Converting text into numeric data"
+            ],
+            "subjects": ["cs"]
+        },
+        {
             "entry": "Combination",
             "definitions": [
                 "A combination of tactics"
