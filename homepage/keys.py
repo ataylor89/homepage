@@ -7,10 +7,7 @@ from algorithms.xor import keyio as xor_keyio
 import os
 import sys
 
-keys = {
-    'RSA': {'small': None, 'medium': None, 'large': None},
-    'XOR': {'small': None, 'medium': None, 'large': None}
-}
+keys = {'RSA': {}, 'XOR': {}}
 
 def init():
     project_root = sys.path[0]
@@ -98,29 +95,29 @@ def load():
         rsa_keytable.generate(64, 500, 1000)
         rsa_primetable.save()
         rsa_keytable.save()
-        if not keys['RSA']['small']:
+        if 'small' not in keys['RSA']:
             keys['RSA']['small'] = rsa_keygen.create_key_pair(64, 10, 1000)
             rsa_keyio.save(keys['RSA']['small'], path + 'small.txt')
             print(f'Created file {path}small.txt')
-        if not keys['RSA']['medium']:
+        if 'medium' not in keys['RSA']:
             keys['RSA']['medium'] = rsa_keygen.create_key_pair(64, 100, 1000)
             rsa_keyio.save(keys['RSA']['medium'], path + 'medium.txt')
             print(f'Created file {path}medium.txt')
-        if not keys['RSA']['large']:
+        if 'large' not in keys['RSA']:
             keys['RSA']['large'] = rsa_keygen.create_key_pair(64, 500, 1000)
             rsa_keyio.save(keys['RSA']['large'], path + 'large.txt')
             print(f'Created file {path}large.txt')
     if counts[1] < 3:
         path = f'{project_root}/algorithms/xor/keys/'
-        if not keys['XOR']['small']:
+        if 'small' not in keys['XOR']:
             keys['XOR']['small'] = xor_keygen.create_key(64)
             xor_keyio.save(keys['XOR']['small'], path + 'small.txt')
             print(f'Created file {path}small.txt')
-        if not keys['XOR']['medium']:
+        if 'medium' not in keys['XOR']:
             keys['XOR']['medium'] = xor_keygen.create_key(256)
             xor_keyio.save(keys['XOR']['medium'], path + 'medium.txt')
             print(f'Created file {path}medium.txt')
-        if not keys['XOR']['large']:
+        if 'large' not in keys['XOR']:
             keys['XOR']['large'] = xor_keygen.create_key(1024)
             xor_keyio.save(keys['XOR']['large'], path + 'large.txt')
             print(f'Created file {path}large.txt')
