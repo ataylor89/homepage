@@ -38,11 +38,11 @@ The second command runs the web server in the background
 
 If you're on AWS cloud, you can also run the web server in a screen session, like this
 
-    screen
-    cd /home/ec2-user/homepage
     # For some reason, I need to be root for my webapp to work on AWS cloud
     sudo su
-    python main.py &
+    screen
+    cd /home/ec2-user/homepage
+    python main.py
 
 Now we can type the key sequence `ctrl a + d` to detach the screen session
 
