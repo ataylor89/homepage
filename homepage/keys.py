@@ -34,7 +34,7 @@ def load():
             except Exception as err:
                 print(err)
 
-    if 'default' not in keys['RSA'] or keys['RSA']['default'] is None:
+    if len(keys['RSA']) == 0:
         rsa_primetable.load()
         rsa_keytable.load()
         rsa_primetable.generate(1000)
@@ -43,7 +43,7 @@ def load():
         rsa_keytable.save()
         keys['RSA']['default'] = rsa_keygen.create_key_pair(64, 10, 1000)
         rsa_keyio.save(keys['RSA']['default'], rsa_key_path + 'default.key')
-        print(f'Saved key to file {rsa_key_path}default.key')
+        print(f'Created a default RSA key in file {rsa_key_path}default.key')
 
     for item in os.listdir(xor_key_path):
         full_path = os.path.join(xor_key_path, item)
@@ -55,10 +55,10 @@ def load():
             except Exception as err:
                 print(err)
 
-    if 'default' not in keys['XOR'] or keys['XOR']['default'] is None:
+    if len(keys['XOR']) == 0:
         keys['XOR']['default'] = xor_keygen.create_key(1024)
         xor_keyio.save(keys['XOR']['default'], xor_key_path + 'default.key')
-        print(f'Saved key to file {xor_key_path}default.key')
+        print(f'Created a default XOR key in file {xor_key_path}default.key')
 
 def get_key_names():
     rsa_key_names = sorted(list(keys['RSA'].keys()))
