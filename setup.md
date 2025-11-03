@@ -82,7 +82,7 @@ This project requires no setup, or close to no setup
 
 That was my goal when I simplified the requirements for running the application
 
-Thanks for reading,
+Thanks for reading,  
 Andrew
 
 PS. The sections that follow are the old text, which I wrote before I simplified the setup requirements
