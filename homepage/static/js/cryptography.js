@@ -2,6 +2,7 @@ class Cryptography {
 
     constructor() {
         this.addEventListeners();
+        this.handleAlgorithmChange();
     }
 
     addEventListeners() {
@@ -12,7 +13,22 @@ class Cryptography {
 
     handleAlgorithmChange() {
         let value = $('#algorithm').val();
-        if (value == 'RSA' || value == 'XOR') {
+        if (value == 'RSA') {
+            $('#key').empty();
+            for (let i = 0; i < _keys['RSA'].length; i++) {
+                let key = _keys['RSA'][i];
+                let option = $('<option/>').html(key).val(key);
+                $('#key').append(option);
+            }
+            $('#key_selection').show();
+        }
+        else if (value == 'XOR') {
+            $('#key').empty();
+            for (let i = 0; i < _keys['XOR'].length; i++) {
+                let key = _keys['XOR'][i];
+                let option = $('<option/>').html(key).val(key);
+                $('#key').append(option);
+            }
             $('#key_selection').show();
         }
         else {

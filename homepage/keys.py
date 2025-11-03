@@ -11,19 +11,28 @@ keys = {'RSA': {}, 'XOR': {}}
 
 def load():
     project_root = sys.path[0]
+    rsa_path = f'{project_root}/algorithms/rsa/keys/'
+    xor_path = f'{project_root}/algorithms/xor/keys/'
 
-    path = f'{project_root}/algorithms/rsa/keys/'
     try:
-        os.makedirs(path, exist_ok=False)
-        print('Created directory ' + path)
+        os.makedirs(rsa_path, exist_ok=False)
+        print('Created directory ' + rsa_path)
     except: pass
 
-    if os.path.isfile(path + 'default.txt'):
-        try:
-            keys['RSA']['default'] = rsa_keyio.load(path + 'default.txt')
-            print(f'Loaded key from file {path}default.txt')
-        except Exception as err:
-            print(err)
+    try:
+        os.makedirs(xor_path, exist_ok=False)
+        print('Created directory ' + xor_path)
+    except: pass
+
+    for item in os.listdir(rsa_path):
+        full_path = os.path.join(rsa_path, item)
+        if os.path.isfile(full_path) and item.endswith('.key'):
+            keyname = item[:-4]
+            try:
+                keys['RSA'][keyname] = rsa_keyio.load(full_path)
+                print(f'Loaded key from file {full_path}')
+            except Exception as err:
+                print(err)
 
     if 'default' not in keys['RSA'] or keys['RSA']['default'] is None:
         rsa_primetable.load()
@@ -33,23 +42,26 @@ def load():
         rsa_primetable.save()
         rsa_keytable.save()
         keys['RSA']['default'] = rsa_keygen.create_key_pair(64, 10, 1000)
-        rsa_keyio.save(keys['RSA']['default'], path + 'default.txt')
-        print(f'Saved key to file {path}default.txt')
+        rsa_keyio.save(keys['RSA']['default'], rsa_path + 'default.key')
+        print(f'Saved key to file {rsa_path}default.key')
 
-    path = f'{project_root}/algorithms/xor/keys/'
-    try:
-        os.makedirs(path, exist_ok=False)
-        print('Created directory ' + path)
-    except: pass
-
-    if os.path.isfile(path + 'default.txt'):
-        try:
-            keys['XOR']['default'] = xor_keyio.load(path + 'default.txt')
-            print(f'Loaded key from file {path}default.txt')
-        except Exception as err:
-            print(err)
+    for item in os.listdir(xor_path):
+        full_path = os.path.join(xor_path, item)
+        if os.path.isfile(full_path) and item.endswith('.key'):
+            keyname = item[:-4]
+            try:
+                keys['XOR'][keyname] = xor_keyio.load(full_path)
+                print(f'Loaded key from file {full_path}')
+            except Exception as err:
+                print(err)
 
     if 'default' not in keys['XOR'] or keys['XOR']['default'] is None:
         keys['XOR']['default'] = xor_keygen.create_key(1024)
-        xor_keyio.save(keys['XOR']['default'], path + 'default.txt')
-        print(f'Saved key to file {path}default.txt')
+        xor_keyio.save(keys['XOR']['default'], xor_path + 'default.key')
+        print(f'Saved key to file {xor_path}default.key')
+
+def get_key_names():
+    return {
+        'RSA': sorted(list(keys['RSA'].keys())),
+        'XOR': sorted(list(keys['XOR'].keys()))
+    }

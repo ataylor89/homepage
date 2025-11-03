@@ -1,5 +1,5 @@
 from flask import request, render_template, jsonify
-from homepage import app, weather, calendar, cryptography, dictionary
+from homepage import app, weather, calendar, cryptography, keys, dictionary
 
 @app.route('/', methods=['GET'])
 def home():
@@ -36,7 +36,8 @@ def calendar_data():
 
 @app.route('/cryptography', methods=['GET'])
 def cryptography_view():
-    return render_template('cryptography.html')
+    keynames = keys.get_key_names()
+    return render_template('cryptography.html', keys=keynames)
 
 @app.route('/cryptography_service', methods=['POST'])
 def cryptography_service():
