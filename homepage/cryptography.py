@@ -1,6 +1,6 @@
 from algorithms import rot13, rot88
-from algorithms.rsa import encrypt, decrypt, parser as rsa_parser
-from algorithms.xor import xor, parser as xor_parser
+from algorithms.rsa import encrypt, decrypt
+from algorithms.xor import xor
 from homepage.keys import keys
 
 def crypt(algorithm, key_name, message, action):
