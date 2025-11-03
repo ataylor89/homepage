@@ -61,6 +61,6 @@ def load():
         print(f'Saved key to file {xor_key_path}default.key')
 
 def get_key_names():
-    rsa_keys = sorted(list(keys['RSA'].keys()))
-    xor_keys = sorted(list(keys['XOR'].keys()))
-    return {'RSA': rsa_keys, 'XOR': xor_keys}
+    rsa_key_names = sorted(list(keys['RSA'].keys()))
+    xor_key_names = sorted(list(keys['XOR'].keys()))
+    return {'RSA': rsa_key_names, 'XOR': xor_key_names}
