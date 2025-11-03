@@ -1,6 +1,93 @@
 # setup
 
-## Setup and requirements
+## Update
+
+I was able to simplify the setup process
+
+Instead of having to create the RSA and XOR keys manually, they are automatically generated, in the file keys.py
+
+If the rsa and xor folders are missing, or there are no keys in the folders, it creates a default key in each folder
+
+My family taught me that we can write an application that requires "no setup"
+
+That was my goal... to turn this into a web application that requires no setup
+
+It's important to point out that the external Python libraries (Flask, requests, and geopy) are still required
+
+If you want to forego one of these requirements, you can write your own implementation and replace it with your own implementation
+
+For example, you can write your own implementation of geopy, or remove the geocoding logic so that the project does not need geopy
+
+You can install these software packages with the command `pip install -r requirements.txt` in the project root directory
+
+You can also install them individually:
+
+    pip install Flask
+    pip install requests
+    pip install geopy
+
+After the external libraries are installed, we are ready to run the project, with the command
+
+    python main.py
+
+or
+
+    python main.py &
+
+The second command runs the web server in the background
+
+If you're on AWS cloud, you can also run the web server in a screen session, like this
+
+    screen
+    cd /home/ec2-user/homepage
+    # For some reason, I need to be root for my webapp to work on AWS cloud
+    sudo su
+    python main.py &
+
+Now we can type the key sequence `ctrl a + d` to detach the screen session
+
+If we log out of our EC2 instance, the web server will still be running in our screen session on AWS cloud
+
+I think that covers everything I wanted to cover
+
+We can install the Python dependencies with the command `pip install -r requirements.txt` from the project root directory
+
+We can run the web application with the command `python main.py &` from the project root directory
+
+Then we can open a web browser and visit localhost (if we are running it on our personal computer) or the IPv4 address of our EC2 instance if we are running it on AWS cloud
+
+In other words, if we are using our personal computer, we can open a web browser and visit 127.0.0.1 or localhost
+
+The web page should appear in the web browser
+
+I wanted to add this update because I simplified the setup process...
+
+I minimized the number of setup requirements
+
+The only setup requirement is to install the Python dependencies that are used by the project
+
+My family taught me that we often use the preposition "for" after the word "requirements"
+
+As in, the one requirement for running the webapp is to install the libraries listed in requirements.txt, or to implement them yourself, or to remove the geocoding logic so that geopy is not needed
+
+I thought I would add that as an afterthought
+
+The requirements for running this project are very simple: to install the necessary packages, and then run the project
+
+I think that is a good stopping point
+
+I also want to point out... that a "no setup" project is a good paradigm to know
+
+This project requires no setup, or close to no setup
+
+That was my goal when I simplified the requirements for running the application
+
+Thanks for reading,
+Andrew
+
+PS. The sections that follow are the old text, which I wrote before I simplified the setup requirements
+
+## Setup and requirements (archived)
 
 In the readme file, we talked about how to deploy a small, lightweight website (sample_homepage) to AWS cloud
 
@@ -27,7 +114,7 @@ To run it locally, the following requirements have to be satisfied:
 3. The XOR keys have to be present in algorithms/xor/keys
     - To create the XOR keys, see the section entitled "Creating the XOR keys"
 
-## Creating the RSA keys
+## Creating the RSA keys (archived)
 
 I created the RSA keys with the following commands:
 
@@ -63,7 +150,7 @@ The cryptography page uses these keys to encrypt a message or decrypt an encrypt
 
 Now, let's move onto creating the XOR keys
 
-## Creating the XOR keys
+## Creating the XOR keys (archived)
 
 I created the XOR keys with the following commands:
 
