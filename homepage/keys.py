@@ -32,7 +32,7 @@ def load_from_files():
         try:
             keys['RSA']['small'] = rsa_keyio.load(path + 'small.txt')
             counts[0] += 1
-            print('Successfully loaded keyfile %s' %(path + 'small.txt'))
+            print('Loaded key from file %s' %(path + 'small.txt'))
         except Exception as err:
             print(err)
 
@@ -40,7 +40,7 @@ def load_from_files():
         try:
             keys['RSA']['medium'] = rsa_keyio.load(path + 'medium.txt')
             counts[0] += 1
-            print('Successfully loaded keyfile %s' %(path + 'medium.txt'))
+            print('Loaded key from file %s' %(path + 'medium.txt'))
         except Exception as err:
             print(err)
 
@@ -48,7 +48,7 @@ def load_from_files():
         try:
             keys['RSA']['large'] = rsa_keyio.load(path + 'large.txt')
             counts[0] += 1
-            print('Successfully loaded keyfile %s' %(path + 'large.txt'))
+            print('Loaded key from file %s' %(path + 'large.txt'))
         except Exception as err:
             print(err)
 
@@ -58,7 +58,7 @@ def load_from_files():
         try:
             keys['XOR']['small'] = xor_keyio.load(path + 'small.txt')
             counts[1] += 1
-            print('Successfully loaded keyfile %s' %(path + 'small.txt'))
+            print('Loaded key from file %s' %(path + 'small.txt'))
         except Exception as err:
             print(err)
 
@@ -66,7 +66,7 @@ def load_from_files():
         try:
             keys['XOR']['medium'] = xor_keyio.load(path + 'medium.txt')
             counts[1] += 1
-            print('Successfully loaded keyfile %s' %(path + 'medium.txt'))
+            print('Loaded key from file %s' %(path + 'medium.txt'))
         except Exception as err:
             print(err)
 
@@ -74,7 +74,7 @@ def load_from_files():
         try:
             keys['XOR']['large'] = xor_keyio.load(path + 'large.txt')
             counts[1] += 1
-            print('Successfully loaded keyfile %s' %(path + 'large.txt'))
+            print('Loaded key from file %s' %(path + 'large.txt'))
         except Exception as err:
             print(err)
 
@@ -98,26 +98,26 @@ def load():
         if 'small' not in keys['RSA']:
             keys['RSA']['small'] = rsa_keygen.create_key_pair(64, 10, 1000)
             rsa_keyio.save(keys['RSA']['small'], path + 'small.txt')
-            print(f'Created file {path}small.txt')
+            print(f'Saved key to file {path}small.txt')
         if 'medium' not in keys['RSA']:
             keys['RSA']['medium'] = rsa_keygen.create_key_pair(64, 100, 1000)
             rsa_keyio.save(keys['RSA']['medium'], path + 'medium.txt')
-            print(f'Created file {path}medium.txt')
+            print(f'Saved key to file {path}medium.txt')
         if 'large' not in keys['RSA']:
             keys['RSA']['large'] = rsa_keygen.create_key_pair(64, 500, 1000)
             rsa_keyio.save(keys['RSA']['large'], path + 'large.txt')
-            print(f'Created file {path}large.txt')
+            print(f'Saved key to file {path}large.txt')
     if counts[1] < 3:
         path = f'{project_root}/algorithms/xor/keys/'
         if 'small' not in keys['XOR']:
             keys['XOR']['small'] = xor_keygen.create_key(64)
             xor_keyio.save(keys['XOR']['small'], path + 'small.txt')
-            print(f'Created file {path}small.txt')
+            print(f'Saved key to file {path}small.txt')
         if 'medium' not in keys['XOR']:
             keys['XOR']['medium'] = xor_keygen.create_key(256)
             xor_keyio.save(keys['XOR']['medium'], path + 'medium.txt')
-            print(f'Created file {path}medium.txt')
+            print(f'Saved key to file {path}medium.txt')
         if 'large' not in keys['XOR']:
             keys['XOR']['large'] = xor_keygen.create_key(1024)
             xor_keyio.save(keys['XOR']['large'], path + 'large.txt')
-            print(f'Created file {path}large.txt')
+            print(f'Saved key to file {path}large.txt')
