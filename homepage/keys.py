@@ -27,7 +27,7 @@ def init():
 
 def load_from_files():
     project_root = sys.path[0]
-    path = f'{project_root}/algorithms/rsa/keys'
+    path = f'{project_root}/algorithms/rsa/keys/'
 
     counts = [0, 0]
 
@@ -55,11 +55,11 @@ def load_from_files():
         except Exception as err:
             print(err)
 
-    path = f'{project_root}/algorithms/xor/keys'
+    path = f'{project_root}/algorithms/xor/keys/'
 
     if os.path.isfile(path + 'small.txt'):
         try:
-            keys['XOR']['small'] = xor_parser.parse_key(path + 'small.txt')
+            keys['XOR']['small'] = xor_keyio.load(path + 'small.txt')
             counts[1] += 1
             print('Successfully loaded keyfile %s' %(path + 'small.txt'))
         except Exception as err:
@@ -67,7 +67,7 @@ def load_from_files():
 
     if os.path.isfile(path + 'medium.txt'):
         try:
-            keys['XOR']['medium'] = xor_parser.parse_key(path + 'medium.txt')
+            keys['XOR']['medium'] = xor_keyio.load(path + 'medium.txt')
             counts[1] += 1
             print('Successfully loaded keyfile %s' %(path + 'medium.txt'))
         except Exception as err:
@@ -75,7 +75,7 @@ def load_from_files():
 
     if os.path.isfile(path + 'large.txt'):
         try:
-            keys['XOR']['large'] = xor_parser.parse_key(path + 'large.txt')
+            keys['XOR']['large'] = xor_keyio.load(path + 'large.txt')
             counts[1] += 1
             print('Successfully loaded keyfile %s' %(path + 'large.txt'))
         except Exception as err:

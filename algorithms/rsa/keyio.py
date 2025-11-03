@@ -10,4 +10,4 @@ def load(path):
 def save(key, path):
     with open(path, "w") as file:
         for (n, e, d) in key:
-            file.write("n=%d e=%d d=%d" %(n, e, d))
+            file.write("n=%d e=%d d=%d\n" %(n, e, d))
