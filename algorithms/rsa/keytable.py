@@ -73,7 +73,7 @@ def generate(numkeys, tmin, tmax):
         # print("d = %d" %d)
 
         if test(n, e, d):
-            print("Adding key (n=%d, p=%d, q=%d, phi=%d, e=%d, d=%d)" %(n, p, q, phi, e, d))
+            # print("Adding key (n=%d, p=%d, q=%d, phi=%d, e=%d, d=%d)" %(n, p, q, phi, e, d))
             table[n] = (n, p, q, phi, e, d)
             count += 1
 

@@ -35,12 +35,14 @@ def load():
                 print(err)
 
     if len(keys['RSA']) == 0:
-        rsa_primetable.load()
-        rsa_keytable.load()
+        primetable_path = f'{project_root}/algorithms/rsa/primetable.pickle'
+        keytable_path=f'{project_root}/algorithms/rsa/keytable.pickle'
+        rsa_primetable.load(primetable_path)
+        rsa_keytable.load(keytable_path)
         rsa_primetable.generate(1000)
         rsa_keytable.generate(64, 10, 1000)
-        rsa_primetable.save()
-        rsa_keytable.save()
+        rsa_primetable.save(path=primetable_path)
+        rsa_keytable.save(path=keytable_path)
         keys['RSA']['default'] = rsa_keygen.create_key_pair(64, 10, 1000)
         rsa_keyio.save(keys['RSA']['default'], rsa_key_path + 'default.key')
         print(f'[homepage] Created default RSA key {rsa_key_path}default.key')
