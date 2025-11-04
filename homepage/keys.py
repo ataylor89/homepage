@@ -16,12 +16,12 @@ def load():
 
     try:
         os.makedirs(rsa_key_path, exist_ok=False)
-        print('Created directory ' + rsa_key_path)
+        print('[homepage] Created directory ' + rsa_key_path)
     except: pass
 
     try:
         os.makedirs(xor_key_path, exist_ok=False)
-        print('Created directory ' + xor_key_path)
+        print('[homepage] Created directory ' + xor_key_path)
     except: pass
 
     for item in os.listdir(rsa_key_path):
@@ -30,7 +30,7 @@ def load():
             keyname = item[:-4]
             try:
                 keys['RSA'][keyname] = rsa_keyio.load(full_path)
-                print(f'Loaded key from file {full_path}')
+                print(f'[homepage] Loaded key {full_path}')
             except Exception as err:
                 print(err)
 
@@ -43,7 +43,7 @@ def load():
         rsa_keytable.save()
         keys['RSA']['default'] = rsa_keygen.create_key_pair(64, 10, 1000)
         rsa_keyio.save(keys['RSA']['default'], rsa_key_path + 'default.key')
-        print(f'Created a default RSA key in file {rsa_key_path}default.key')
+        print(f'[homepage] Created a default RSA key in file {rsa_key_path}default.key')
 
     for item in os.listdir(xor_key_path):
         full_path = os.path.join(xor_key_path, item)
@@ -51,14 +51,14 @@ def load():
             keyname = item[:-4]
             try:
                 keys['XOR'][keyname] = xor_keyio.load(full_path)
-                print(f'Loaded key from file {full_path}')
+                print(f'[homepage] Loaded key {full_path}')
             except Exception as err:
                 print(err)
 
     if len(keys['XOR']) == 0:
         keys['XOR']['default'] = xor_keygen.create_key(1024)
         xor_keyio.save(keys['XOR']['default'], xor_key_path + 'default.key')
-        print(f'Created a default XOR key in file {xor_key_path}default.key')
+        print(f'[homepage] Created a default XOR key in file {xor_key_path}default.key')
 
 def get_key_names():
     rsa_key_names = sorted(list(keys['RSA'].keys()))
