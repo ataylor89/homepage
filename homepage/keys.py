@@ -43,7 +43,7 @@ def load():
         rsa_keytable.save()
         keys['RSA']['default'] = rsa_keygen.create_key_pair(64, 10, 1000)
         rsa_keyio.save(keys['RSA']['default'], rsa_key_path + 'default.key')
-        print(f'[homepage] Created a default RSA key in file {rsa_key_path}default.key')
+        print(f'[homepage] Created default RSA key {rsa_key_path}default.key')
 
     for item in os.listdir(xor_key_path):
         full_path = os.path.join(xor_key_path, item)
@@ -58,7 +58,7 @@ def load():
     if len(keys['XOR']) == 0:
         keys['XOR']['default'] = xor_keygen.create_key(1024)
         xor_keyio.save(keys['XOR']['default'], xor_key_path + 'default.key')
-        print(f'[homepage] Created a default XOR key in file {xor_key_path}default.key')
+        print(f'[homepage] Created default XOR key {xor_key_path}default.key')
 
 def get_key_names():
     rsa_key_names = sorted(list(keys['RSA'].keys()))
