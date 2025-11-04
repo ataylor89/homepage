@@ -110,6 +110,14 @@
             "subjects": ["cs"]
         },
         {
+            "entry": "Cipher (noun)",
+            "definitions": [
+                "An encryption algorithm (e.g. a rotation cipher)",
+                "An encrypted message"
+            ],
+            "subjects": ["cs"]
+        },
+        {
             "entry": "Combination",
             "definitions": [
                 "A combination of tactics"
