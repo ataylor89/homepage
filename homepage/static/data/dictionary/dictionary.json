@@ -139,6 +139,13 @@
             "subjects": ["math", "cs"]
         },
         {
+            "entry": "Real number",
+            "definitions": [
+                "(Informal) A real number is a point on the number line",
+                "(Formal) A real number is a Cauchy sequence"
+            ]
+        },
+        {
             "entry": "Tactic",
             "definitions": [
                 "A move; an attack; a type of attack",
