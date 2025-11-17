@@ -13,37 +13,22 @@ class Cryptography {
 
     handleAlgorithmChange() {
         let value = $('#algorithm').val();
-        if (value == 'RSA') {
+        let className = '.' + value.toLowerCase();
+        if (value == 'RSA' || value == 'XOR') {
             $('#key').empty();
-            for (let i = 0; i < _keys['RSA'].length; i++) {
-                let key = _keys['RSA'][i];
+            for (let i = 0; i < _keys[value].length; i++) {
+                let key = _keys[value][i];
                 let option = $('<option/>').html(key).val(key);
                 $('#key').append(option);
             }
-            $('#key_selection').show();
         }
-        else if (value == 'XOR') {
-            $('#key').empty();
-            for (let i = 0; i < _keys['XOR'].length; i++) {
-                let key = _keys['XOR'][i];
-                let option = $('<option/>').html(key).val(key);
-                $('#key').append(option);
-            }
-            $('#key_selection').show();
-        }
-        else {
-            $('#key_selection').hide();
-        }
+        $('div.form-group').filter(className).show();
+        $('div.form-group').not('.all').not(className).hide();
     }
 
     handleTextInput() {
         let text = $('#input').val();
-        if (text.length > 0) {
-            $('button[type="submit"]').prop('disabled', false);
-        }
-        else {
-            $('button[type="submit"]').prop('disabled', true);
-        }
+        $('button[type="submit"]').prop('disabled', text.length == 0);
     }
 
     handleFormSubmission(e) {

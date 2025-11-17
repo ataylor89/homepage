@@ -43,7 +43,7 @@ def cryptography_view():
 def cryptography_service():
     algorithm = request.form['algorithm']
     key = request.form['key']
-    message = request.form['input']
+    message = request.form['input'].replace('\r\n', '\n')
     action = request.form['action']
     return cryptography.crypt(algorithm, key, message, action)
 
