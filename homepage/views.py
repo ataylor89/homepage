@@ -1,5 +1,6 @@
 from flask import request, render_template, jsonify
-from homepage import app, weather, calendar, cryptography, keys, dictionary
+from homepage import app, weather, calendar, cryptography, dictionary
+from algorithms import keys
 
 @app.route('/', methods=['GET'])
 def home():
