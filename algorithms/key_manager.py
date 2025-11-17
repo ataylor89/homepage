@@ -1,18 +1,24 @@
-import os
-import sys
 from algorithms.rsa import primetable as rsa_primetable
 from algorithms.rsa import keytable as rsa_keytable
 from algorithms.rsa import keygen as rsa_keygen
 from algorithms.rsa import keyio as rsa_keyio
 from algorithms.xor import keygen as xor_keygen
 from algorithms.xor import keyio as xor_keyio
+import sys
+import os
 
 keys = {'RSA': {}, 'XOR': {}}
+key_names = {'RSA': {}, 'XOR': {}}
 
-def load():
+def load_keys():
     project_root = sys.path[0]
     rsa_key_path = f'{project_root}/algorithms/rsa/keys/'
     xor_key_path = f'{project_root}/algorithms/xor/keys/'
+
+    keys['RSA'].clear()
+    keys['XOR'].clear()
+    key_names['RSA'].clear()
+    key_names['XOR'].clear()
 
     try:
         os.makedirs(rsa_key_path, exist_ok=False)
@@ -62,7 +68,5 @@ def load():
         xor_keyio.save(keys['XOR']['default'], xor_key_path + 'default.key')
         print(f'[homepage] Created default XOR key {xor_key_path}default.key')
 
-def get_key_names():
-    rsa_key_names = sorted(list(keys['RSA'].keys()))
-    xor_key_names = sorted(list(keys['XOR'].keys()))
-    return {'RSA': rsa_key_names, 'XOR': xor_key_names}
+    key_names['RSA'] = sorted(list(keys['RSA'].keys()))
+    key_names['XOR'] = sorted(list(keys['XOR'].keys()))

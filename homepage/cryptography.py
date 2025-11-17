@@ -1,7 +1,7 @@
 from algorithms import rot13, rot88, md5
 from algorithms.rsa import encrypt, decrypt
 from algorithms.xor import xor
-from algorithms.keys import keys
+from algorithms.key_manager import keys
 
 def crypt(algorithm, key_name, message, action):
     if algorithm == 'RSA':

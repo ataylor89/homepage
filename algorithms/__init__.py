@@ -1,3 +1,3 @@
-from algorithms import keys
+from algorithms import key_manager
 
-keys.load()
+key_manager.load_keys()

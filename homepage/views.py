@@ -1,6 +1,6 @@
 from flask import request, render_template, jsonify
 from homepage import app, weather, calendar, cryptography, dictionary
-from algorithms import keys
+from algorithms.key_manager import key_names
 
 @app.route('/', methods=['GET'])
 def home():
@@ -37,8 +37,7 @@ def calendar_data():
 
 @app.route('/cryptography', methods=['GET'])
 def cryptography_view():
-    keynames = keys.get_key_names()
-    return render_template('cryptography.html', keys=keynames)
+    return render_template('cryptography.html', keys=key_names)
 
 @app.route('/cryptography_service', methods=['POST'])
 def cryptography_service():
