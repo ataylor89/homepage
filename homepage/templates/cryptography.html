@@ -35,6 +35,7 @@
                     <option value="ROT13">ROT13</option>
                     <option value="ROT88">ROT88</option>
                     <option value="MD5">MD5</option>
+                    <option value="SHA-256">SHA-256</option>
                 </select>
             </div>
             <div class="form-group rsa xor">
@@ -48,7 +49,7 @@
             <div class="form-group rot13">
                 <button type="submit" onclick="this.form.action.value='encryptdecrypt'" disabled>Encrypt / Decrypt</button>
             </div>
-            <div class="form-group md5">
+            <div class="form-group md5 sha-256">
                 <button type="submit" onclick="this.form.action.value='hash'" disabled>Hash</button>
             </div>
             <div class="form-group all">

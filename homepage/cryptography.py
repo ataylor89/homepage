@@ -1,4 +1,4 @@
-from algorithms import rot13, rot88, md5
+from algorithms import rot13, rot88, md5, sha256
 from algorithms.rsa import encrypt, decrypt
 from algorithms.xor import xor
 from algorithms.key_manager import keys
@@ -37,3 +37,5 @@ def crypt(algorithm, key_name, message, action):
             return plaintext
     elif algorithm == 'MD5':
         return md5.md5(message.encode('utf-8')).hexdigest
+    elif algorithm == 'SHA-256':
+        return sha256.sha256(message.encode('utf-8')).hexdigest
