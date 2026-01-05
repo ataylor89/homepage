@@ -1,0 +1,119 @@
+{
+    "year": 2026,
+    "leap_year": false,
+    "months": [
+        {
+            "month": "January",
+            "days": 31,
+            "offset": 4,
+            "entries": {
+                "1": "New Year's Day"
+            }
+        },
+        {
+            "month": "February",
+            "days": 28,
+            "offset": 0,
+            "entries": {
+                "14": "Valentine's Day"
+            }
+        },
+        {
+            "month": "March",
+            "days": 31,
+            "offset": 0,
+            "entries": {
+                "17": "Saint Patrick's Day",
+                "20": "March Equinox"
+            }
+        },
+        {
+            "month": "April",
+            "days": 30,
+            "offset": 3,
+            "entries": {
+                "5": "Easter Sunday",
+                "6": "Easter Monday"
+            }
+        },
+        {
+            "month": "May",
+            "days": 31,
+            "offset": 5,
+            "entries": {
+                "10": "Mother's Day"
+            }
+        },
+        {
+            "month": "June",
+            "days": 30,
+            "offset": 1,
+            "entries": {
+                "19": "Juneteenth",
+                "21": "Father's Day<br/>June Solstice"
+            }
+        },
+        {
+            "month": "July",
+            "days": 31,
+            "offset": 3,
+            "entries": {}
+        },
+        {
+            "month": "August",
+            "days": 31,
+            "offset": 6,
+            "entries": {}
+        },
+        {
+            "month": "September",
+            "days": 30,
+            "offset": 2,
+            "entries": {
+                "7": "Labor Day",
+                "11": "Rosh Hashanah",
+                "12": "Rosh Hashanah",
+                "13": "Rosh Hashanah",
+                "22": "September Equinox"
+            }
+        },
+        {
+            "month": "October",
+            "days": 31,
+            "offset": 4,
+            "entries": {
+                "31": "Halloween"
+            }
+        },
+        {
+            "month": "November",
+            "days": 30,
+            "offset": 0,
+            "entries": {
+                "1": "World Vegan Day",
+                "13": "World Kindness Day",
+                "26": "Thanksgiving Day"
+            }
+        },
+        {
+            "month": "December",
+            "days": 31,
+            "offset": 2,
+            "entries": {
+                "4": "Hannukah",
+                "5": "Hannukah",
+                "6": "Hannukah",
+                "7": "Hannukah",
+                "8": "Hannnukah",
+                "9": "Hannukah",
+                "10": "Hannukah",
+                "11": "Hannukah",
+                "12": "Hannukah",
+                "21": "December Solstice",
+                "24": "Christmas Eve",
+                "25": "Christmas Day",
+                "31": "New Year's Eve"
+            }
+        }
+    ]
+}
