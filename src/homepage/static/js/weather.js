@@ -2,7 +2,7 @@ class WeatherForecast {
 
     constructor() {
         let today = moment().format("YYYY-MM-DD");
-        $("#today").html("Today is " + moment().format("dddd MMMM Do YYYY"));
+        $('#today').html('Today is ' + moment().format('dddd MMMM Do YYYY'));
         this.addEventListeners();
     }
 
@@ -62,7 +62,7 @@ class WeatherForecast {
     addEventListeners() {
         $('input[name="latitude"]').on('input', this.handleKeyEvent);
         $('input[name="longitude"]').on('input', this.handleKeyEvent);
-        $("#searchform").on('submit', this.handleSubmit);
+        $('#searchform').on('submit', this.handleSubmit);
     }
 }
 

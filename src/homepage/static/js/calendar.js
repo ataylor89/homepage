@@ -20,10 +20,10 @@ class Calendar {
 
     addEventListeners() {
         let $t = this;
-        $("#prev_btn").click(function() {
+        $('#prev_btn').click(function() {
             $t.back();
         });
-        $("#next_btn").click(function() {
+        $('#next_btn').click(function() {
             $t.forward();
         });
     }
