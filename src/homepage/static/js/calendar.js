@@ -11,7 +11,7 @@ class Calendar {
 
     init() {
         let $t = this;
-        $.post('/calendar_data', {year: $t.year}, function(data) {
+        $.post('/api/calendar/data', {year: $t.year}, function(data) {
             $t.data = data;
             $t.flip($t.year, $t.month);
         });
@@ -64,7 +64,7 @@ class Calendar {
     flip(year, month) {
         let $t = this;
         if (this.year != year) {
-            $.post('/calendar_data', {year: year}, function(data) {
+            $.post('/api/calendar/data', {year: year}, function(data) {
                 if (data) {
                     $t.year = year;
                     $t.data = data;

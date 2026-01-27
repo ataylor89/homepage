@@ -10,27 +10,18 @@ def home():
 def weather_view():
     return render_template('weather.html')
 
-@app.route('/weather_data', methods=['POST'])
+@app.route('/api/weather/data', methods=['POST'])
 def weather_data():
-    param = request.form['search_param']
-    if param == 'city':
-        city = request.form['city']
-        latitude, longitude = weather.geocode(city)
-    else:
-        latitude = request.form['latitude']
-        longitude = request.form['longitude']
-        city = weather.rev_geocode(latitude, longitude)
+    latitude = request.form['latitude']
+    longitude = request.form['longitude']
     forecast = weather.get_forecast(latitude, longitude)
-    forecast['city'] = city
-    forecast['latitude'] = latitude
-    forecast['longitude'] = longitude
     return jsonify(forecast)
 
 @app.route('/calendar', methods=['GET'])
 def calendar_view():
     return render_template('calendar.html')
 
-@app.route('/calendar_data', methods=['POST'])
+@app.route('/api/calendar/data', methods=['POST'])
 def calendar_data():
     year = int(request.form['year'])
     return jsonify(calendar.get(year))
@@ -39,7 +30,7 @@ def calendar_data():
 def cryptography_view():
     return render_template('cryptography.html', keys=key_names)
 
-@app.route('/cryptography_service', methods=['POST'])
+@app.route('/api/cryptography/convert', methods=['POST'])
 def cryptography_service():
     algorithm = request.form['algorithm']
     key = request.form['key']
@@ -51,7 +42,7 @@ def cryptography_service():
 def dictionary_view():
     return render_template('dictionary.html')
 
-@app.route('/create_dictionary', methods=['POST'])
+@app.route('/api/dictionary/create', methods=['POST'])
 def create_dictionary():
     subjects = request.form.getlist('subjects')
     return dictionary.create_dictionary(subjects)

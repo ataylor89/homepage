@@ -25,26 +25,7 @@
     <div id="container">
         <h3 id="today"></h3>
         <form id="searchform">
-            <div>
-                Search by
-                <input type="radio" name="search_param" value="city" checked />
-                <label for="search_param">city</label>
-                <input type="radio" name="search_param" value="coordinates" />
-                <label for="search_param">coordinates</label>
-            </div>
-            <div id="search_by_city" class="vmargin">
-                <table class="search">
-                    <tr>                    
-                        <td>
-                            <label for="city">City:</label>
-                        </td>
-                        <td>
-                            <input name="city" type="text" pattern="[a-zA-Z,.; ]{1,100}"/>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="search_by_coordinates" class="vmargin" style="display: none">
+            <div id="search_by_coordinates" class="vmargin">
                 <table class="search">
                     <tr>
                         <td>
@@ -80,6 +61,7 @@
                 <th>Icon</th>
             </tr>
         </table>
+        <div id="error" style="display: none"></div>
     </div>
 </body>
 </html>

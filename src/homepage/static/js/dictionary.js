@@ -10,7 +10,7 @@ class Dictionary {
 
     handleSubmit(e) {
         e.preventDefault();
-        $.post('/create_dictionary', $('#dictionary_form').serialize(), function(data) {
+        $.post('/api/dictionary/create', $('#dictionary_form').serialize(), function(data) {
             $('#dictionary tbody').empty();
             for (let i = 0; i < data.entries.length; i++) {
                 let entry = data.entries[i];

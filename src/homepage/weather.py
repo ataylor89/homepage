@@ -1,7 +1,4 @@
 import requests
-from geopy.geocoders import Nominatim
-
-geolocator = Nominatim(user_agent='weather')
 
 def get_forecast(latitude, longitude):
     url1 = f'https://api.weather.gov/points/{latitude},{longitude}'
@@ -9,11 +6,13 @@ def get_forecast(latitude, longitude):
     url2 = resp1.json()['properties']['forecast']
     resp2 = requests.get(url2)
     data = resp2.json()['properties']
-    forecast = format_json(data)
+    forecast = parse_json_response(data, latitude, longitude)
     return forecast
 
-def format_json(data):
+def parse_json_response(data, latitude, longitude):
     forecast = {}
+    forecast['latitude'] = latitude
+    forecast['longitude'] = longitude
     forecast['elevation'] = format('%f m' %data['elevation']['value'])
     forecast['generatedAt'] = data['generatedAt']
     forecast['units'] = data['units']
@@ -33,15 +32,6 @@ def format_json(data):
         dst['icon'] = src['icon']
         forecast['periods'].append(dst)
     return forecast
-
-def geocode(city):
-    location = geolocator.geocode(city)
-    return (location.latitude, location.longitude)
-
-def rev_geocode(latitude, longitude):
-    location = geolocator.reverse(format('%s, %s' %(latitude, longitude)), language='en')
-    if location.raw['addresstype'] == 'city':
-        return location.raw['name']
 
 def celsius_to_fahrenheit(celsius):
     return celsius * 1.8 + 32
