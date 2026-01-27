@@ -1,6 +1,6 @@
+from homepage import key_names
 from flask import request, render_template, jsonify
 from homepage import app, weather, calendar, cryptography, dictionary
-from algorithms.key_manager import key_names
 
 @app.route('/', methods=['GET'])
 def home():

@@ -14,7 +14,7 @@ class Cryptography {
     handleAlgorithmChange() {
         let value = $('#algorithm').val();
         let className = '.' + value.toLowerCase();
-        if (value == 'RSA' || value == 'XOR') {
+        if (value == 'rsa' || value == 'xor') {
             $('#key').empty();
             for (let i = 0; i < _keys[value].length; i++) {
                 let key = _keys[value][i];
