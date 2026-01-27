@@ -6,7 +6,7 @@ def parse_key(path):
         for index, line in enumerate(file):
             linenum = index + 1
             try:
-                tokens = line.split("=")
+                tokens = line.split('=')
                 byte_value = int(tokens[1])
                 if byte_value < 0 or byte_value > 255:
                     raise InvalidKeyError(f'Value does not fall within the range [0, 255] in line {linenum} of key file')
