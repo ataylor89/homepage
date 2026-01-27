@@ -7,6 +7,7 @@ class Calendar {
         let today = new Date();
         this.year = today.getFullYear();
         this.month = today.getMonth();
+        this.init();
     }
 
     init() {
@@ -112,6 +113,5 @@ class Calendar {
 }
 
 $(document).ready(function() {
-    let calendar = new Calendar();
-    calendar.init();
+    new Calendar();
 });
