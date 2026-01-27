@@ -1,8 +1,8 @@
 from algorithms.rsa import util
 
 def encrypt(msg, key):
-    ciphertext = ""
-    codes = msg.encode("utf-8")
+    ciphertext = ''
+    codes = msg.encode('utf-8')
     keylen = len(key)
     for i in range(0, len(codes)):
         (n, e, d) = key[i % keylen]

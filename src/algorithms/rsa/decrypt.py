@@ -1,7 +1,7 @@
 from algorithms.rsa import util
 
 def decrypt(ciphertext, key):
-    message = ""
+    message = ''
     keylen = len(key)
     start = 0
     end = 0
