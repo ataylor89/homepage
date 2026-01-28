@@ -12,7 +12,8 @@ def decrypt(ciphertext, key):
         end = start + size
         substr = ciphertext[start:end]
         cipher = util.decode(substr)
-        message += chr(util.power_mod_n(cipher, d, n))
+        codepoint = util.power_mod_n(cipher, d, n)
+        message += chr(codepoint)
         i += 1
         start += size
     return message
