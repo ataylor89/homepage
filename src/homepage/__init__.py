@@ -1,7 +1,10 @@
 from homepage.key_manager import KeyManager
+from pathlib import Path
 from flask import Flask
 
-keys = KeyManager()
+project_root = Path(__file__).parent.parent.parent
+
+keys = KeyManager(project_root)
 keys.load()
 
 key_names = {}
