@@ -13,8 +13,3 @@ div#input_container {
 div#output_container {
     float: right;
 }
-
-.info-icon {
-    font-size: 90%;
-    margin-left: 5px;
-}
