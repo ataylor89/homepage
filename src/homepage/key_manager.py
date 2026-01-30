@@ -1,3 +1,4 @@
+from settings import project_root
 from algorithms.rsa import parser as rsa_parser
 from algorithms.xor import parser as xor_parser
 from algorithms.exceptions import KeyFileError
@@ -5,15 +6,14 @@ import os
 
 class KeyManager(dict):
 
-    def __init__(self, project_root):
+    def __init__(self):
         super().__init__()
-        self.project_root = project_root
         self['rsa'] = {}
         self['xor'] = {}
 
     def load(self):
-        rsa_folder = self.project_root / 'keys' / 'rsa'
-        xor_folder = self.project_root / 'keys' / 'xor'
+        rsa_folder = project_root / 'keys' / 'rsa'
+        xor_folder = project_root / 'keys' / 'xor'
 
         for filename in os.listdir(rsa_folder):
             path = rsa_folder / filename
