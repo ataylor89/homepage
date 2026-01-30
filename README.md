@@ -57,14 +57,31 @@ You should see a line that says `homepage.py -> /path/to/homepage/src/main.py`, 
 
 If your file structure is different from mine, then you can replace all references to `~/Github` with the appropriate path.
 
-There is one more step before running the file. We have to make the `~/Github/homepage/src/main.py` file executable.
+There are a couple more steps before running the file. First, we have to make the `~/Github/homepage/src/main.py` file executable.
 
 We can do this with the following command:
 
     % chmod +x ~/Github/homepage/src/main.py
 
-Now we can invoke the program from any directory, by typing the command `homepage.py`.
+Next, we have to add `~/bin` to our PATH variable, so that the shell knows where to find our symbolic links.
 
+We can do this by editing the `~/.zprofile` file (if we are using zsh) or `~/.bash_profile` (if we are using bash).
+
+    % echo $SHELL
+    /bin/zsh
+
+    % vi ~/.zprofile
+
+My `~/.zprofile` file includes the following lines:
+
+    alias python="python3"
+    alias pip="pip3"
+
+    export PATH="/Users/myusername/bin:$PATH"
+
+Having completed all these steps, we can test our symbolic link.
+
+    % cd ~
     % homepage.py
     [homepage] Loaded key /Users/<username>/Github/homepage/keys/rsa/default.txt
     [homepage] Loaded key /Users/<username>/Github/homepage/keys/xor/default.txt
@@ -75,15 +92,18 @@ Now we can invoke the program from any directory, by typing the command `homepag
      * Running on http://127.0.0.1:8081
     Press CTRL+C to quit
 
-The shell directive at the top of main.py, `#!/usr/bin/env python3`, instructs the shell (bash or zsh) to use python3 to interpret the code.
+It works. All we have to do is type the command `homepage.py`, and it invokes the homepage app.
 
-You can actually run main.py on its own. For example,
+I wanted to explain the steps involved in configuring a symbolic link. To summarize, we took the following steps:
 
-    % cd ~/Github/homepage/src
-    % ./main.py
+    1. We made the `~/Github/homepage/src/main.py` file executable with the `chmod +x` command.
+    2. We added the shell directive `#!/usr/bin/env python3` to the top of the `main.py` file.
+    3. We created a symbolic link in the `~/bin` folder with the `ln -s ~/Github/homepage/src/main.py homepage.py` command.
+    4. We added the `~/bin` folder to our PATH variable by editing the `~/.zprofile` configuration file.
+    5. We tested the symbolic link in a Terminal window by typing the `homepage.py` command and verifying that it works.
 
-I wanted to explain this one detail before I conclude.
+I think that concludes this section. I wanted to explain this subject in detail, because in my opinion, symbolic links are very useful.
 
-Symbolic links are very useful, because they allow us to run a program from any directory, not just the directory that the program resides in.
+A symbolic link can make it a lot easier to run your program. (You don't have to navigate to its directory before running it.)
 
-We can run the homepage app from any directory, after configuring the symbolic link, by typing the command `homepage.py`.
+Also, it can improve the user experience.
