@@ -96,11 +96,11 @@ It works. All we have to do is type the command `homepage.py`, and it invokes th
 
 I wanted to explain the steps involved in configuring a symbolic link. To summarize, we took the following steps:
 
-    1. We made the `~/Github/homepage/src/main.py` file executable with the `chmod +x` command.
-    2. We added the shell directive `#!/usr/bin/env python3` to the top of the `main.py` file.
-    3. We created a symbolic link in the `~/bin` folder with the `ln -s ~/Github/homepage/src/main.py homepage.py` command.
-    4. We added the `~/bin` folder to our PATH variable by editing the `~/.zprofile` configuration file.
-    5. We tested the symbolic link in a Terminal window by typing the `homepage.py` command and verifying that it works.
+1. We made the `~/Github/homepage/src/main.py` file executable with the `chmod +x` command.
+2. We added the shell directive `#!/usr/bin/env python3` to the top of the `main.py` file.
+3. We created a symbolic link in the `~/bin` folder with the `ln -s ~/Github/homepage/src/main.py homepage.py` command.
+4. We added the `~/bin` folder to our PATH variable by editing the `~/.zprofile` configuration file.
+5. We tested the symbolic link in a Terminal window by typing the `homepage.py` command and verifying that it works.
 
 I think that concludes this section. I wanted to explain this subject in detail, because in my opinion, symbolic links are very useful.
 
