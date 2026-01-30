@@ -57,7 +57,13 @@ You should see a line that says `homepage.py -> /path/to/homepage/src/main.py`, 
 
 If your file structure is different from mine, then you can replace all references to `~/Github` with the appropriate path.
 
-After creating a symbolic link to `~/Github/homepage/src/main.py`, we can invoke it from any directory by typing the command `homepage.py`.
+There is one more step before running the file. We have to make the `~/Github/homepage/src/main.py` file executable.
+
+We can do this with the following command:
+
+    % chmod +x ~/Github/homepage/src/main.py
+
+Now we can invoke the program from any directory, by typing the command `homepage.py`.
 
     % homepage.py
     [homepage] Loaded key /Users/<username>/Github/homepage/keys/rsa/default.txt
@@ -69,6 +75,15 @@ After creating a symbolic link to `~/Github/homepage/src/main.py`, we can invoke
      * Running on http://127.0.0.1:8081
     Press CTRL+C to quit
 
-Symbolic links are useful, because we don't have to be in the `~/Github/homepage/src` folder to run main.py.
+The shell directive at the top of main.py, `#!/usr/bin/env python3`, instructs the shell (bash or zsh) to use python3 to interpret the code.
 
-We can run it from any directory, by typing the command `homepage.py`.
+You can actually run main.py on its own. For example,
+
+    % cd ~/Github/homepage/src
+    % ./main.py
+
+I wanted to explain this one detail before I conclude.
+
+Symbolic links are very useful, because they allow us to run a program from any directory, not just the directory that the program resides in.
+
+We can run the homepage app from any directory, after configuring the symbolic link, by typing the command `homepage.py`.
