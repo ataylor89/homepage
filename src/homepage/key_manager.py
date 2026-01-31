@@ -2,7 +2,6 @@ from settings import project_root
 from algorithms.rsa import parser as rsa_parser
 from algorithms.xor import parser as xor_parser
 from algorithms.exceptions import KeyFileError
-import os
 
 class KeyManager(dict):
 
@@ -15,20 +14,18 @@ class KeyManager(dict):
         rsa_folder = project_root / 'keys' / 'rsa'
         xor_folder = project_root / 'keys' / 'xor'
 
-        for filename in os.listdir(rsa_folder):
-            path = rsa_folder / filename
-            if path.is_file() and filename.endswith('.txt'):
-                keyname = filename[:-4]
+        for path in rsa_folder.iterdir():
+            if path.is_file() and path.suffix == '.txt':
+                keyname = path.stem
                 try:
                     self['rsa'][keyname] = rsa_parser.parse_key(path)
                     print(f'[homepage] Loaded key {path}')
                 except KeyFileError as err:
                     print(err)
 
-        for filename in os.listdir(xor_folder):
-            path = xor_folder / filename
-            if path.is_file() and filename.endswith('.txt'):
-                keyname = filename[:-4]
+        for path in xor_folder.iterdir():
+            if path.is_file() and path.suffix == '.txt':
+                keyname = path.stem
                 try:
                     self['xor'][keyname] = xor_parser.parse_key(path)
                     print(f'[homepage] Loaded key {path}')
