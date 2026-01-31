@@ -5,8 +5,9 @@ keys = KeyManager()
 keys.load()
 
 key_names = {}
-key_names['rsa'] = sorted(keys['rsa'].keys())
-key_names['xor'] = sorted(keys['xor'].keys())
+sort_key = lambda x: (x != 'default', x)
+key_names['rsa'] = sorted(keys['rsa'].keys(), key=sort_key)
+key_names['xor'] = sorted(keys['xor'].keys(), key=sort_key)
 
 app = Flask(__name__)
 print('[homepage] Welcome to the homepage web application')
