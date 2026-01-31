@@ -22,29 +22,33 @@ def cryptography_view():
 def dictionary_view():
     return render_template('dictionary.html')
 
-@app.route('/api/weather/data', methods=['POST'])
+@app.route('/api/weather/data', methods=['GET', 'POST'])
 def weather_data():
-    latitude = request.form['latitude']
-    longitude = request.form['longitude']
+    params = request.args if request.method == 'GET' else request.form
+    latitude = params['latitude']
+    longitude = params['longitude']
     forecast = weather.get_forecast(latitude, longitude)
     return jsonify(forecast)
 
-@app.route('/api/calendar/data', methods=['POST'])
+@app.route('/api/calendar/data', methods=['GET', 'POST'])
 def calendar_data():
-    year = int(request.form['year'])
+    params = request.args if request.method == 'GET' else request.form
+    year = int(params['year'])
     return jsonify(calendar.get(year))
 
-@app.route('/api/cryptography/convert', methods=['POST'])
+@app.route('/api/cryptography/convert', methods=['GET', 'POST'])
 def cryptography_service():
-    algorithm = request.form['algorithm']
-    key = request.form['key']
-    message = request.form['input'].replace('\r\n', '\n')
-    action = request.form['action']
+    params = request.args if request.method == 'GET' else request.form
+    algorithm = params['algorithm']
+    key = params['key']
+    message = params['input'].replace('\r\n', '\n')
+    action = params['action']
     return cryptography.crypt(algorithm, key, message, action)
 
-@app.route('/api/dictionary/create', methods=['POST'])
+@app.route('/api/dictionary/create', methods=['GET', 'POST'])
 def create_dictionary():
-    subjects = request.form.getlist('subjects')
+    params = request.args if request.method == 'GET' else request.form
+    subjects = params.getlist('subjects')
     return dictionary.create_dictionary(subjects)
 
 @app.errorhandler(404)
