@@ -33,7 +33,7 @@ class Cryptography {
 
     handleFormSubmission(e) {
         e.preventDefault();
-        $.post('/api/cryptography/convert', $('#cryptography').serialize(), function(data) {
+        $.post('/api/cryptography/compute', $('#cryptography').serialize(), function(data) {
             $('#output').val(data)
         });
     }

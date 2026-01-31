@@ -36,7 +36,7 @@ def calendar_data():
     year = int(params['year'])
     return jsonify(calendar.get(year))
 
-@app.route('/api/cryptography/convert', methods=['GET', 'POST'])
+@app.route('/api/cryptography/compute', methods=['GET', 'POST'])
 def cryptography_service():
     params = request.args if request.method == 'GET' else request.form
     algorithm = params['algorithm']
