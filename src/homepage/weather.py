@@ -6,31 +6,31 @@ def get_forecast(latitude, longitude):
     url2 = resp1.json()['properties']['forecast']
     resp2 = requests.get(url2)
     data = resp2.json()['properties']
-    forecast = parse_json_response(data, latitude, longitude)
-    return forecast
-
-def parse_json_response(data, latitude, longitude):
-    forecast = {}
+    forecast = parse_json_response(data)
     forecast['latitude'] = latitude
     forecast['longitude'] = longitude
+    return forecast
+
+def parse_json_response(data):
+    forecast = {}
     forecast['elevation'] = format('%f m' %data['elevation']['value'])
     forecast['generatedAt'] = data['generatedAt']
     forecast['units'] = data['units']
     forecast['periods'] = []
     for src in data['periods']:
-        dst = {}
-        dst['name'] = src['name']
-        dst['temperature'] = str(src['temperature']) + ' ' + src['temperatureUnit']
+        target = {}
+        target['name'] = src['name']
+        target['temperature'] = str(src['temperature']) + ' ' + src['temperatureUnit']
         if src['probabilityOfPrecipitation']['value'] is None:
-            dst['probabilityOfPrecipitation'] = 'N/A'
+            target['probabilityOfPrecipitation'] = 'N/A'
         else:
-            dst['probabilityOfPrecipitation'] = str(src['probabilityOfPrecipitation']['value']) + '%'
-        dst['windDirection'] = src['windDirection']
-        dst['windSpeed'] = src['windSpeed']
-        dst['shortForecast'] = src['shortForecast']
-        dst['detailedForecast'] = src['detailedForecast']
-        dst['icon'] = src['icon']
-        forecast['periods'].append(dst)
+            target['probabilityOfPrecipitation'] = str(src['probabilityOfPrecipitation']['value']) + '%'
+        target['windDirection'] = src['windDirection']
+        target['windSpeed'] = src['windSpeed']
+        target['shortForecast'] = src['shortForecast']
+        target['detailedForecast'] = src['detailedForecast']
+        target['icon'] = src['icon']
+        forecast['periods'].append(target)
     return forecast
 
 def celsius_to_fahrenheit(celsius):
